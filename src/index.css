@@ -223,3 +223,10 @@ body {
 .comment-form-button-disabled:focus {
   outline: none;
 }
+
+.site-footer {
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
+  color: grey;
+}
