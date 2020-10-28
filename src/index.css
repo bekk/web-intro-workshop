@@ -146,10 +146,12 @@ body {
 
 .comment .comment-text {
   margin-left: 10px;
+  display: inline;
 }
 
 .comment .comment-user {
   font-weight: bold;
+  display: inline;
 }
 
 .comment .timestamp {
