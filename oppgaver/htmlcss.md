@@ -21,7 +21,7 @@ Bilder representeres med taggen `img` i HTML. Attributtet `src` forteller nettle
 :trophy: Legg til bildet `working.jpg`, som ligger i `img` mappen, i `index.html`.
 
 <details><summary>🚨Løsningsforslag</summary>
-Alle html-elementer kan ha [attributter](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes). Disse kan brukes til å gi tilleggsinformasjon om et element. I vårt tilfelle bruker vi `src` attributtet til å spesifisere den relative pathen til bildet.
+Alle html-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinformasjon om et element. I vårt tilfelle bruker vi `src` attributtet til å spesifisere den relative pathen til bildet.
 
 ```html
 <img
