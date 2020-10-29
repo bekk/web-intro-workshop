@@ -36,21 +36,7 @@
                 </button>
               </p>
             </section>
-            <button id="hide-button" type="button" onclick="(function() {
-                   const comments = document.getElementsByClassName('comments').item(0);
-                   const hideButton = document.getElementById('hide-button');
-                   if (comments.classList.contains('hide')) {
-                       comments.classList.remove('hide');
-                       hideButton.innerText = 'skjul';
-                   } else {
-                       comments.classList.add('hide');
-                       hideButton.innerText = 'vis';
-                   }
-                })();">
-              skjul
-            </button>
             <section class="comments">
-
               <article class="comment">
                 <p class="comment-user">reidar</p>
                 <p class="comment-text">Her jobbes det godt ser jeg!</p>
@@ -64,11 +50,11 @@
                 </p>
                 <p class="timestamp">5 hours ago</p>
               </article>
-            </section>
               <form class="comment-form">
                 <input placeholder="Add a comment..." value="" />
                 <button class="comment-form-button">Post</button>
               </form>
+            </section>
           </article>
         </section>
       </main>
