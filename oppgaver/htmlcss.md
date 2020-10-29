@@ -58,6 +58,46 @@ Alle html-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinfor
 
 </details>
 
+## CSS - Cascading Style Sheets
+
+CSS er teknologien vi bruker for å gi HTML det utseende vi ønsker. Hvor ting skal ligge i forhold til hverandre på siden, farger, font, og bakgrunn er ting man setter i CSS. 
+
+>Litt på siden, så er CSS en norsk oppfinnelse 💪
+
+HTML elementer har ofte en `class` attributt. En `class` kan deles av flere elementer. Den kan også ha en `id` attributt. Denne er unik per element. CSS bruker klassenavn og id-navn for å referere til elementer. 
+
+En `<p class="avsnitt">Hei</p>` tag med class referers i CSS med et punktum:
+
+```css
+.avsnitt{
+    color: black;
+}
+```
+En `<p id="avsnitt">Hei</p>` tag med id refereres med firkant:
+
+```css
+#avsnitt{
+    color: red;
+}
+```
+
+:trophy: Sett overskriften din til midten av siden, med `text-align` i CSS, og gjør teksten rød.
+
+:bulb: CSS kode kan du legge inne i `<style>` tags, som du plasserer innenfor `<head>` seksjonen av siden din.
+
+:bulb: Les på [MDN artikkelen](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) om text-align
+
+<details><summary>:rotating_light: Løsningsforslag</summary>
+
+```css
+.overskrift{
+    text-align: center;
+    color: red;
+}
+```
+
+</details>
+
 ## Lag det vakkert med CSS :sparkles:
 
 Okey, nå har vi en overskrift og et bilde. Elementene er der, men de skjer kanskje ikke så vakre ut.
@@ -137,3 +177,4 @@ Bakgrunnsfarge er ganske selvforklarende, men det er ikke `border-radius`. Man k
 ```
 
 </details>
+
