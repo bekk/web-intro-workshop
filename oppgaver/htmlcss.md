@@ -6,7 +6,7 @@ Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
 
 - :trophy: Oppgave: Her er hva du skal gjøre
 - :bulb: Tips: Litt ekstra info som kan være greit å være for å løse en oppgave
-- 🚨 Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
+- :rotating_light: Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
 
 ## Bilde
 
@@ -20,7 +20,7 @@ Bilder representeres med taggen `img` i HTML. Attributtet `src` forteller nettle
 
 :trophy: Legg til bildet `working.jpg`, som ligger i `img` mappen, i `index.html`.
 
-<details><summary>🚨Løsningsforslag</summary>
+<details><summary>:rotating_light: Løsningsforslag</summary>
 Alle html-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinformasjon om et element. I vårt tilfelle bruker vi `src` attributtet til å spesifisere den relative pathen til bildet.
 
 ```html
