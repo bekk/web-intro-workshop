@@ -60,7 +60,9 @@ Alle html-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinfor
 
 ## CSS - Cascading Style Sheets
 
-CSS er teknologien vi bruker for å gi HTML det utseende vi ønsker. Hvor ting skal ligge i forhold til hverandre på siden, farger, font, og bakgrunn er ting man setter i CSS. Litt på siden, så er CSS en norsk oppfinnelse :flag_no:
+CSS er teknologien vi bruker for å gi HTML det utseende vi ønsker. Hvor ting skal ligge i forhold til hverandre på siden, farger, font, og bakgrunn er ting man setter i CSS. 
+
+>Litt på siden, så er CSS en norsk oppfinnelse 💪
 
 HTML elementer har ofte en `class` attributt. En `class` kan deles av flere elementer. Den kan også ha en `id` attributt. Denne er unik per element. CSS bruker klassenavn og id-navn for å referere til elementer. 
 
@@ -79,9 +81,9 @@ En `<p id="avsnitt">Hei</p>` tag med id refereres med firkant:
 }
 ```
 
-:bulb: CSS kode kan du legge inne i `<style>` tags, som du plasserer innenfor `<head>` seksjonen av siden din.
-
 :trophy: Sett overskriften din til midten av siden, med `text-align` i CSS, og gjør teksten rød.
+
+:bulb: CSS kode kan du legge inne i `<style>` tags, som du plasserer innenfor `<head>` seksjonen av siden din.
 
 :bulb: Les på [MDN artikkelen](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) om text-align
 
