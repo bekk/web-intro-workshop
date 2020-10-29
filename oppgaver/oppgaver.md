@@ -63,9 +63,9 @@ Like-knappen har ID-en `like-button-1`. Vi kan derfor bruke `document` sin `getE
 const knapp = document.getElementById("like-button-1");
 console.log(knapp);
 ```
+</details>
 
 📚 [Les mer om å hente ut noder fra DOM-en](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/07-dom-apiet#aksessere-html-elementer)
-</details>
 
 ### 3b) Lytte på klikk
 
