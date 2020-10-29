@@ -15,10 +15,48 @@
         <h1><a href="index.html">Bekkstagram</a></h1>
       </header>
       <main>
-        <img
-          src="./img/working.jpeg"
-          alt="Fem personer som jobber sammen rundt et bord"
-        />
+        <section class="posts">
+          <article class="post">
+            <h3 class="author">olav</h3>
+            <img
+              class="image"
+              src="./img/working.jpeg"
+              alt="Fem personer som jobber sammen rundt et bord"
+            />
+            <p class="description">
+              God trøkk på jobb i dag
+              <span role="img" aria-label="Emoji med solbriller">😎</span>
+            </p>
+            <section class="post-details">
+              <p class="timestamp">7 hours ago</p>
+              <p class="likes">
+                Likes: 0
+                <button class="like-button">
+                  <span role="img" aria-label="Lik bildet">👍</span>
+                </button>
+              </p>
+            </section>
+            <section class="comments">
+              <article class="comment">
+                <p class="comment-user">reidar</p>
+                <p class="comment-text">Her jobbes det godt ser jeg!</p>
+                <p class="timestamp">5 hours ago</p>
+              </article>
+              <article class="comment">
+                <p class="comment-user">frithjof</p>
+                <p class="comment-text">
+                  La det rulle inn
+                  <span role="img" aria-label="Emoji med pengemunn">🤑</span>
+                </p>
+                <p class="timestamp">5 hours ago</p>
+              </article>
+              <form class="comment-form">
+                <input placeholder="Add a comment..." value="" />
+                <button class="comment-form-button">Post</button>
+              </form>
+            </section>
+          </article>
+        </section>
       </main>
       <footer class="site-footer">
         <p><b>Bekkstagram</b></p>
