@@ -6,7 +6,7 @@ Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
 
 - :trophy: Oppgave: Her er hva du skal gjøre
 - :bulb: Tips: Litt ekstra info som kan være greit å være for å løse en oppgave
-- :rotating*light: Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du \_kan* løse oppgaven
+- :rotating_light: Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du *kan* løse oppgaven
 
 ## Header
 
