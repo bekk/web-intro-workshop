@@ -6,15 +6,16 @@ Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
 
 - :trophy: Oppgave: Her er hva du skal gjøre
 - :bulb: Tips: Litt ekstra info som kan være greit å være for å løse en oppgave
-- :rotating_light: Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
+- :rotating*light: Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du \_kan* løse oppgaven
 
 ## Header
-HTML-dokumenter inneholder en rekke elementer som enten er self closing, altså lukker seg selv; eller som har underelementer, ofte referert til som children. 
+
+HTML-dokumenter inneholder en rekke elementer som enten er self closing, altså lukker seg selv; eller som har underelementer, ofte referert til som children.
 
 Et element defineres med en tag. En tag ser slik ut `<tag>`. En tag markerer starten eller slutten på elementet, med innholdet i midten: `<tag>innhold</tag>`
 Eventuelt er tagen self-closing: `<tag/>`
 
-Det fins mange forkskjellige tags som har som oppgave å få siden til å se ut som man vil. 
+Det fins mange forkskjellige tags som har som oppgave å få siden til å se ut som man vil.
 
 Vi har `<p>` for å definere avsnitt, `<h1>` for overskrifter (og h2, h3 osv. for mindre overskrifter), `<li>` for lister, og `<div>` for å definere områder innen HTMLkoden. Disse er bare noen få eksempler.
 
@@ -27,7 +28,7 @@ Body elementet ditt skal se sånn ut:
 
 ```html
 <body>
-    <h1>Hello World!</h1>
+  <h1>Hello World!</h1>
 </body>
 ```
 
@@ -57,4 +58,35 @@ Alle html-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinfor
 
 </details>
 
+## Lag det vakkert med CSS :sparkles:
 
+Okey, nå har vi en overskrift og et bilde. Elementene er der, men de skjer kanskje ikke så vakre ut.
+
+En post på Bekkstagram består av hvem som har lastet den opp, et bilde og en beskrivelse av bildet. Dette kan representeres med html-koden nedenfor:
+
+```html
+<article class="post">
+  <h3 class="author">olav</h3>
+  <img
+    class="image"
+    src="./img/working.jpeg"
+    alt="Fem personer som jobber sammen rundt et bord"
+  />
+  <p class="description">
+    God trøkk på jobb i dag
+    <span role="img" aria-label="Emoji med solbriller">😎</span>
+  </p>
+</article>
+```
+
+:trophy: Erstatt bildet (`img`-taggen) du laget i forrige oppgave med html-koden over og få det til å se ut som bildet under.
+
+:bulb: Man kan velge å style elementer med en gitt klasse. For eksempel kan man style bildet med klasse `image` med css'en under.
+
+```css
+.image {
+  /* Din styling */
+}
+```
+
+[Bekkstagram post](./images/post.png "Ønsket utseende av Bekkstagram post")
