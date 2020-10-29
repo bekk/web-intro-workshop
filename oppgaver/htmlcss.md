@@ -18,10 +18,20 @@ Det fins mange forkskjellige tags som har som oppgave å få siden til å se ut 
 
 Vi har `<p>` for å definere avsnitt, `<h1>` for overskrifter (og h2, h3 osv. for mindre overskrifter), `<li>` for lister, og `<div>` for å definere områder innen HTMLkoden. Disse er bare noen få eksempler.
 
-Start et HTML dokument, og lag en overskrift som sier "Hello world!"
+:trophy: Start et HTML dokument, og lag en overskrift som sier "Hello world!"
 
-Du kan skrive koden inn i `<body>` elementet i den inkluderte filen.
+:bulb: Du kan skrive koden inn i `<body>` elementet i den inkluderte filen.
 
+<details><summary>:rotating_light: Løsningsforslag</summary>
+Body elementet ditt skal se sånn ut:
+
+```html
+<body>
+    <h1>Hello World!</h1>
+</body>
+```
+
+</details>
 
 ## Bilde
 
@@ -46,3 +56,5 @@ Alle html-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinfor
 ```
 
 </details>
+
+
