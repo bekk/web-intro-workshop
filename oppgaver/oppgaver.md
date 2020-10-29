@@ -86,3 +86,135 @@ knapp.addEventListener("click", () => {
 📚 [Les mer om hendelser i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/07-dom-apiet#hendelser)
 
 📚 [Les mer om JavaScript-funksjoner i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/04-funksjoner)
+
+
+
+### 4) Bygg opp HTML fra JavaScript
+
+Frem til nå har vi bygget opp feeden med statisk HTML-kode. I den virkelige verden ønsker vi å bygge opp feeden basert på en datakilde med dynamiske data - f.eks. fra et eksternt api. 
+
+I denne oppgaven er datakilden vår `images.js` som ligger i `img`-mappa. Der er det definerert en liste av objekter hvor hvert objekt representerer innholdet til en post. 
+
+Du skal vi slette all html-kode som ligger i posts-elementet i `index.html` og erstatte innholdet med dynamiske data vha JavaScript. 
+
+
+### 4a) Vis ett bilde
+
+Nå skal du bruke JavaScript for å vise frem et bilde. 
+
+<details>
+<summary>🚨Løsningsforslag</summary>
+
+.....Litt tekst her, kanskje...
+
+```js
+const image = document.createElement('img');
+image.className = 'image';
+image.src = './img/working.jpeg';
+image.alt = 'Fem personer som jobber sammen rundt et bord';
+
+const post = document.createElement('article');
+post.className = 'post';
+post.appendChild(image);
+
+const hovedElement = document.getElementById('posts');
+hovedElement.appendChild(post)
+
+```
+</details>
+
+
+### 4b) Vis alle bildene
+
+
+<details>
+<summary>🚨Løsningsforslag</summary>
+
+.....Litt tekst her, kanskje...
+
+```js
+const posts = [...]
+
+const lagPostContent = (post) => {
+  const image = document.createElement('img');
+  image.className = 'image';
+  image.src = post.path;
+  image.alt = post.alt;
+
+  const postContent = document.createElement('article');
+  postContent.className = 'post';
+  postContent.appendChild(image);
+  return postContent
+}
+
+const hovedElement = document.getElementById('posts');
+
+posts.map(lagPostContent).forEach((postAsDomElement) => {
+    hovedElement.appendChild(postAsDomElement)
+});
+
+```
+</details>
+
+### 4c) Vis author
+
+
+### 4d) Vis med metadata
+
+Timestamp; egen oppgave mtp. new Date(...).toLocalDateString(...)
+Author og description
+
+<details>
+<summary>🚨Løsningsforslag</summary>
+
+.....Litt tekst her, kanskje...
+
+```js
+const lagPostContent = (post) => {
+    const image = document.createElement('img');
+    image.className = 'image';
+    image.src = post.path;
+    image.alt = post.alt;
+
+    const author = document.createElement("h3")
+    author.className= "author";
+    author.innerHTML = post.username;
+
+    const description = document.createElement("p");
+    description.className = 'description';
+    description.innerHTML = post.description;
+
+    const details = document.createElement('section');
+    details.className = 'post-details';
+    const timestamp = document.createElement('p');
+    timestamp.className = 'timestamp';
+    timestamp.innerHTML = new Date(post.createdDate).toLocaleDateString('nb-NO')
+    details.appendChild(timestamp)
+
+    const likes = document.createElement('p');
+    likes.className = 'likes';
+    const likeCount = document.createTextNode("Likes: " + post.likes);
+    const likeButton = document.createElement('button');
+    likeButton.className='like-button';
+    const likeButtonContent = document.createElement('span')
+    likeButtonContent.setAttribute('role', 'img');
+    likeButtonContent.setAttribute('aria-label', 'Lik bildet');
+    likeButtonContent.innerText = "👍";
+    likeButton.appendChild(likeButtonContent);
+
+    likes.appendChild(likeCount)
+    likes.appendChild(likeButton);
+
+    details.appendChild(likes);
+
+    const postContent = document.createElement('article');
+    postContent.className = 'post';
+    postContent.appendChild(author);
+    postContent.appendChild(image);
+    postContent.appendChild(description);
+    postContent.appendChild(details);
+
+    return postContent
+}
+```
+</details>
