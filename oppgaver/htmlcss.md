@@ -88,5 +88,4 @@ En post på Bekkstagram består av hvem som har lastet den opp, et bilde og en b
   /* Din styling */
 }
 ```
-
-[Bekkstagram post](./images/post.png "Ønsket utseende av Bekkstagram post")
+<img src="./images/post.png" style="max-width: 500px;" alt="Screenshot of Bekkstagram post" />
