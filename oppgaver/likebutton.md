@@ -33,13 +33,13 @@
 ### Med like-oppdatering (counter) 👍
 
 ```html
-<p><span id="like-value-1">0</span> likes</p>
+<p><span id="like-value-1">1</span> likes</p>
 <button onclick="like()">Like</button>
 <script>
   function like() {
-    likeValue = document.getElementById("like-value-1");
+    likeSpan = document.getElementById("like-value-1");
     alert("I like it! #like4like #l4l");
-    likeValue.innerHTML += likeValue.value;
+    likeSpan.innerHTML = Number(likeSpan.textContent) + 1;
   }
 </script>
 ```
