@@ -69,6 +69,13 @@ body {
   position: relative;
 }
 
+.post .description--closed {
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .post .timestamp {
   color: black;
   margin: 0;
