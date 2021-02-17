@@ -3,7 +3,7 @@ const DAY = 1000 * 60 * 60 * 24;
 // Dette er arrayet du skal liste ut
 // Det inneholder bilder på formatet
 // { id: 1, path: 'http://url.com', description: 'tekst til posten', alt: 'alt-tekst' }
-export const images = [{
+export const posts = [{
     id: '1',
     path: './working.jpeg',
     description: 'God trøkk på jobb i dag 😎',

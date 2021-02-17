@@ -23,16 +23,22 @@
               src="./img/working.jpeg"
               alt="Fem personer som jobber sammen rundt et bord"
             />
-            <p class="description">
-              God trøkk på jobb i dag
+            <p class="description description--closed" id="description-1">
+              Hey, you know how I'm, like, always trying to save the planet?
+              Here's my chance. Do you have any idea how long it takes those
+              cups to decompose. We gotta burn the rain forest, dump toxic
+              waste, pollute the air, and rip up the OZONE! 'Cause maybe if we
+              screw up this planet enough, they won't want it anymore!
               <span role="img" aria-label="Emoji med solbriller">😎</span>
             </p>
             <section class="post-details">
               <p class="timestamp">7 hours ago</p>
-              <p class="like-paragraph">Likes: 0</p>
-              <button class="like-button" onclick="like()">
-                <span role="img" aria-label="Lik bildet">👍</span>
-              </button>
+              <p class="likes">
+                Likes: 0
+                <button class="like-button">
+                  <span role="img" aria-label="Lik bildet">👍</span>
+                </button>
+              </p>
             </section>
             <section class="comments">
               <article class="comment">
@@ -61,6 +67,6 @@
         <p>Laget i ren HTML, CSS og JavaScript</p>
       </footer>
     </div>
-    <script type="text/javascript" src="like.js"></script>
+    <script src="beskrivelse.js" type="text/javascript"></script>
   </body>
 </html>
