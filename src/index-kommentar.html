@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Min nettside laget med ren HTML, CSS og JS!"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Bekkstagram</title>
+  </head>
+  <body>
+    <div class="App">
+      <header class="site-header">
+        <h1><a href="index.html">Bekkstagram</a></h1>
+      </header>
+      <main>
+        <section class="posts">
+          <article class="post">
+            <h3 class="author">olav</h3>
+            <img
+              class="image"
+              src="./img/working.jpeg"
+              alt="Fem personer som jobber sammen rundt et bord"
+            />
+            <p class="description description--closed" id="description-1">
+              Hey, you know how I'm, like, always trying to save the planet?
+              Here's my chance. Do you have any idea how long it takes those
+              cups to decompose. We gotta burn the rain forest, dump toxic
+              waste, pollute the air, and rip up the OZONE! 'Cause maybe if we
+              screw up this planet enough, they won't want it anymore!
+              <span role="img" aria-label="Emoji med solbriller">😎</span>
+            </p>
+            <section class="post-details">
+              <p class="timestamp">7 hours ago</p>
+              <p class="likes">
+                Likes: 0
+                <button class="like-button">
+                  <span role="img" aria-label="Lik bildet">👍</span>
+                </button>
+              </p>
+            </section>
+            <section class="comments">
+              <article class="comment">
+                <p class="comment-user">reidar</p>
+                <p class="comment-text">Her jobbes det godt ser jeg!</p>
+                <p class="timestamp">5 hours ago</p>
+              </article>
+              <article class="comment">
+                <p class="comment-user">frithjof</p>
+                <p class="comment-text">
+                  La det rulle inn
+                  <span role="img" aria-label="Emoji med pengemunn">🤑</span>
+                </p>
+                <p class="timestamp">5 hours ago</p>
+              </article>
+             
+            </section>
+            <!-- TODO: FLytte forms på utsiden av section i de andre HTML-sidene, da legger nye kommentarer seg over -->
+            <form class="comment-form">
+              <input placeholder="Add a comment..." value="" id="comment"/>
+              <button class="comment-form-button" type="button" onclick="addComment()">Post</button>
+            </form>
+          </article>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <p><b>Bekkstagram</b></p>
+        <p>Laget i ren HTML, CSS og JavaScript</p>
+      </footer>
+    </div>
+    <script src="beskrivelse.js" type="text/javascript"></script>
+    <script src="comments.js" type="text/javascript"></script>
+  </body>
+</html>
