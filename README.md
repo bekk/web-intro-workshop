@@ -130,7 +130,9 @@ En post på Bekkstagram består av hvem som har lastet den opp, et bilde og en b
   </article>
 </main>
 ```
-
+<!-- TODO:
+Ordne teksten nedenfor så den gir litt med mening 
+-->
 🏆 Erstatt innholdet i body-elementet html-koden over og få det til å se ut som bildet under.
 
 1. Sett en maks-bredde på innholdet og sentrer det på midten av siden (Du kan feks. style `main` elementet)
@@ -139,6 +141,7 @@ En post på Bekkstagram består av hvem som har lastet den opp, et bilde og en b
 
 💡 Fargen vi har brukt som bakgrunnsfarge heter `gainsboro`
 
+<!-- Gir ikke så veldig mening -->
 💡 Man kan velge å style elementer med en gitt klasse. For eksempel kan man style bildet med klasse `image` med css'en under.
 
 ```css
@@ -195,7 +198,7 @@ Bakgrunnsfarge er ganske selvforklarende, men det er ikke `border-radius`. Man k
 
 Den enkleste måten å kjøre JavaScript på siden din, er å skrive koden direkte inni en `<script>`-tag.
 
-Legg inn en `<script>`-tag i HTML-en sin body, og få den til å vise en _alert_ når du åpner siden.
+🏆 Legg inn en `<script>`-tag i HTML-en sin body, og få den til å vise en _alert_ når du åpner siden.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -213,7 +216,9 @@ Vi legger `<script>`-taggen vår i slutten av `<body>` i `index.html`:
 
 ## 2) Referere til ekstern fil
 
-Det blir fort rotete å blande HTML- og Javascript i samme fil. Flytt JavaScripten til en egen fil, og referer til denne fra `index.html`.
+Det blir fort rotete å blande HTML- og Javascript i samme fil. Javascript kan flyttes til en egen fil, og lastes inn i HTML-filen for en mer ryddig struktur.
+
+🏆 Flytt JavaScripten til en egen fil, og referer til denne fra `index.html`.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -241,7 +246,7 @@ Det er litt irriterende at alerten dukker opp hver gang vi laster inn siden på 
 
 ### 3a) Få tak i knappen med JavaScript
 
-Bruk `document`-globalen for å huke tak i knappen vår. Kjør `console.log` på returverdien for å se hva vi fikk tilbake.
+🏆 Bruk `document`-globalen for å huke tak i knappen vår. Kjør `console.log` på returverdien for å se hva vi fikk tilbake.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -258,7 +263,9 @@ console.log(knapp);
 
 ### 3b) Lytte på klikk
 
-Nå har vi fått tak i knappen med JavaScript. Bruk returverdien til å sette på en _event listener_ som lytter på klikk på knappen.
+Nå har vi fått tak i en referanse til knappen med JavaScript. Det neste steget er å lytte til hendelser som utløses av knappen.
+
+🏆 Bruk referansen til knappen til å sette på en _event listener_ som lytter på klikk på knappen.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -279,7 +286,7 @@ knapp.addEventListener("click", () => {
 
 
 ### 4) Bygg opp HTML fra JavaScript
-
+<!-- Todo: Ordne på teksten under -->
 Frem til nå har vi bygget opp feeden med statisk HTML-kode. I den virkelige verden ønsker vi å bygge opp feeden basert på en datakilde med dynamiske data - f.eks. fra et eksternt api. 
 
 I denne oppgaven er datakilden vår `images.js` som ligger i `img`-mappa. Der er det definerert en liste av objekter hvor hvert objekt representerer innholdet til en post. 
