@@ -245,9 +245,9 @@ Under vår `<img>`-tag lager vi en ny seksjon. I denne seksjonen vi legger inn e
 </main>
 ```
 
-Seksjonen for å vise tidligere kommentarer legger vi under like knappen. Legg merke til at vi gir de ulike seksjonene et `id` eller `class` attributt for å skille de ulike seksjonene.
+Seksjonen for å vise tidligere kommentarer legger vi under like knappen. Vi har gitt vår seksjon klasse-navnet "comments", og lagt til noen statiske kommentarer som midlertidig innhold. Legg merke til at vi gir de ulike seksjonene et `id` eller `class` attributt for å skille de ulike seksjonene/elementene.
 
-Kommentarfeltet lages ved å bruke HTML-elementet `<form>` (skjema). Inne i skjemaet vårt lager vi et tekstfelt og en knapp.
+Kommentarfeltet grupperes ved å bruke HTML-elementet `<form>` (skjema). Inne i skjemaet vårt lager vi et tekstfelt og en knapp. Vi bruker `<form>` når vi skal lage en seksjon som inneholder interaktive elementer som skal sende inn informasjon.
 
 ```html
 <main>
@@ -287,7 +287,7 @@ Kommentarfeltet lages ved å bruke HTML-elementet `<form>` (skjema). Inne i skje
       </article>
     </section>
     <form class="comment-form">
-      <input placeholder="Add a comment..." value="" id="comment" />
+      <input placeholder="Add a comment..." value="" id="comment-text-input" />
       <button class="comment-form-button">Post</button>
     </form>
   </article>
