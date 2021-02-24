@@ -9,24 +9,25 @@ Vi har også laget en [GitBook](https://bekk.gitbook.io/web-intro/) som du gjern
 
 ## Emoji-guide
 
-Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
+Du kommer til å se noen emojis i oppgavene 🤩 De betyr det her:
 
 - 🏆 Oppgave: Her er hva du skal gjøre
-- 💡 Tips: Litt ekstra info som kan være greit å være for å løse en oppgave
+- 💡 Tips: Litt ekstra info som kan være greit å vite for og løse en oppgave
 - 🚨 Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
+- 🤓 Fun facts: Ekstrainfo for de spesielt interesserte
 
-# Html og Css
+# HTML og CSS
 
-## Header
+## Header-elementer
 
-HTML-dokumenter inneholder en rekke elementer som enten er self closing, altså lukker seg selv; eller som har underelementer, ofte referert til som children.
+HTML-dokumenter inneholder en rekke elementer som enten er self-closing (altså lukker seg selv) eller som har underelementer, ofte referert til som children.
 
-Et element defineres med en tag. En tag ser slik ut `<tag>`. En tag markerer starten eller slutten på elementet, med innholdet i midten: `<tag>innhold</tag>`
+Et element defineres med en _tag_. En tag ser slik ut `<tag>`. En tag markerer starten eller slutten på elementet, med innholdet i midten: `<tag> innhold </tag>`
 Eventuelt er tagen self-closing: `<tag/>`
 
 Det fins mange forkskjellige tags som har som oppgave å få siden til å se ut som man vil.
 
-Vi har `<p>` for å definere avsnitt, `<h1>` for overskrifter (og h2, h3 osv. for mindre overskrifter), `<li>` for lister, og `<div>` for å definere områder innen HTMLkoden. Disse er bare noen få eksempler.
+Vi har `<p>` for å definere avsnitt, `<h1>` for overskrifter (og `<h2>`, `<h3>` osv. for mindre overskrifter), `<li>` for lister, og `<div>` for å definere områder innen HTML-koden. Disse er bare noen få eksempler.
 
 🏆 Lag en overskrift som sier "Hello world!"
 
@@ -45,18 +46,18 @@ Body elementet ditt skal se sånn ut:
 
 ## Bilde
 
-Bilder representeres med taggen `img` i HTML. Attributtet `src` forteller nettleseren hvor den kan hente bildet. I vårt tilfelle vil dette være en lokal fil.
+Bilder representeres med taggen `<img>` i HTML. Et attributt er noe som gir mer informasjon om et HTML-element og ligger inne i en tag (på innsiden av `<` og `>`). Attributtet `src` forteller nettleseren hvor den kan hente bildet. I vårt tilfelle vil dette være en lokal fil.
 
 ```html
 <img src="Path til bildet" alt="Beskrivelse av bildet" />
 ```
 
-> Det er viktig å beskrive bilde med `alt` attributtet, slik at skjermlesere og andre verktøy kan presentere det riktig for brukeren.
+> Det er viktig å beskrive bilde med `alt`-attributtet, slik at skjermlesere og andre verktøy kan presentere det riktig for brukeren.
 
-🏆 Legg til bildet `working.jpg`, som ligger i `img` mappen, i `index.html`.
+🏆 Legg til bildet `working.jpg` i `index.html`. Du finner bildet i mappen [`img`](./src/img/).
 
 <details><summary>🚨 Løsningsforslag</summary>
-Alle html-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinformasjon om et element. I vårt tilfelle bruker vi `src` attributtet til å spesifisere den relative pathen til bildet.
+Alle HTML-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinformasjon om et element. I vårt tilfelle bruker vi `src`-attributtet til å spesifisere filstien til bildet.
 
 ```html
 <img
@@ -69,27 +70,29 @@ Alle html-elementer kan ha attributter. Disse kan brukes til å gi tilleggsinfor
 
 ## CSS - Cascading Style Sheets
 
-CSS er teknologien vi bruker for å gi HTML det utseende vi ønsker. Hvor ting skal ligge i forhold til hverandre på siden, farger, font, og bakgrunn er ting man setter i CSS.
+CSS er verktøyet vi bruker for å gi HTML det utseendet vi ønsker. Hvor ting skal ligge i forhold til hverandre på siden, farger, font, og bakgrunn er ting man setter i CSS.
 
 > Litt på siden, så er CSS en norsk oppfinnelse 💪
 
 Man kan sette styling direkte på et HTML element, men den vanligste måten å style på er å ha CSS koden i en egen fil.
 
-HTML elementer har ofte en `class` attributt. En `class` kan deles av flere elementer. Den kan også ha en `id` attributt. Denne er unik per element. CSS bruker klassenavn og id-navn for å referere til elementer.
+HTML-elementer har ofte et `class`-attributt, som kan deles av flere elementer. De kan også ha et `id`-attributt, som er unik per element. CSS bruker `class`-attributt og `id`-attributt for å referere til elementer.
 
-En `<p class="avsnitt">Hei</p>` tag med class referers i CSS med et punktum:
+Klasser refereres til med punktum før klassenavnet i CSS.
+For eksempel: `<p class="avsnitt">Hei</p>` vil refereres til med følgende CSS-regel:
 
 ```css
 .avsnitt {
-  color: black;
+  /* Din stilsetting */
 }
 ```
 
-En `<p id="avsnitt">Hei</p>` tag med id refereres med firkant:
+ID refereres til med nummertegn (#) før id-navnet i CSS.
+For eksempel: `<p id="avsnitt">Hei</p>` vil refereres til med følgende CSS-regel:
 
 ```css
 #avsnitt {
-  color: red;
+  /* Din stilsetting */
 }
 ```
 
@@ -99,7 +102,7 @@ Se også Git-booken for mer informasjon om selectorer, pseudo-klasser og box-mod
 
 💡 Eksterne filer med CSS kode kan du legge inne i `<style>` tags, som du plasserer innenfor `<head>` seksjonen av siden din. Du kan refere til filen på tilsvarende måte som du la inn bildet ditt i en tidligere oppgave.
 
-💡 Les på [MDN artikkelen](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) om text-align
+💡 Les på [MDN-artikkelen](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) om `text-align`.
 
 <details><summary>🚨 Løsningsforslag</summary>
 
@@ -112,17 +115,17 @@ Se også Git-booken for mer informasjon om selectorer, pseudo-klasser og box-mod
 
 </details>
 
-## Lag det vakkert med CSS ✨
+## Gjør det vakkert med CSS ✨
 
-Nå har vi en overskrift og et bilde! Elementene er der, men de ser kanskje ikke så vakre ut.
+Okey, nå har vi en overskrift og et bilde! Elementene er der, men de ser kanskje ikke så vakre ut...
 
-En post på vår Bekkstagram består av hvem som har lastet opp posten, et bilde og en beskrivelse av bildet. Dette kan eksempelvis representeres med html-koden nedenfor:
+En post på Bekkstagram består av hvem som har lastet den opp, et bilde og en beskrivelse av bildet. Dette kan representeres med HTML-koden nedenfor:
 
 ```html
 <main>
   <h1>Bekkstagram</h1>
   <article class="post">
-    <h3 class="author">olav</h3>
+    <h3 class="author">Olav</h3>
     <img
       class="image"
       src="./img/working.jpeg"
@@ -136,33 +139,21 @@ En post på vår Bekkstagram består av hvem som har lastet opp posten, et bilde
 </main>
 ```
 
-<!-- TODO:
-Ordne teksten nedenfor så den gir litt med mening
--->
+🏆 Erstatt innholdet i `body`-elementet med HTML-koden over. Bruk så CSS og følg stegene nedenfor for å gjenskape bildet som vist under.
 
-🏆 Erstatt innholdet i body-elementet i filen index.html med html-koden over, og bruk CSS til å få det til å se ut som bildet under:
-
-1. Sett en maks-bredde på innholdet og sentrer det på midten av siden (Du kan feks. style `main` elementet)
+1. Sett en maksbredde på innholdet og sentrer det på midten av siden (Du kan f.eks. style `main`-elementet)
 2. Fiks størrelsen på bildet. (Hint: Bredden på bildet er mer enn 100%)
 3. Legg på bakgrunnsfarge, rund av hjørnene og legg til litt luft rundt tekstene.
 
-💡 Fargen vi har brukt som bakgrunnsfarge heter `gainsboro`
-
-<!-- Gir ikke så veldig mening -->
-
-💡 Man kan velge å style elementer med en gitt klasse. For eksempel kan man style bildet med klasse `image` med css'en under.
-
-```css
-.image {
-  /* Din styling */
-}
-```
+💡 Fargen vi har brukt som bakgrunnsfarge heter `gainsboro`.
 
 <img src="./oppgaver/images/post.png" style="max-width: 500px;" alt="Screenshot of Bekkstagram post" />
 
 <details><summary>🚨 Løsningsforslag</summary>
 
-For å begrense bredden til elementer kan vi bruke `max-width`, la oss feks. begrense bredden til 500px. Det som er hakket mer magisk er at man kan sentrere et element horisontalt ved å sette høyre og venstre margin til `auto`.
+For å begrense bredden til elementer kan vi bruke `max-width`. La oss f.eks. begrense bredden til `500px`. Noe som er hakket mer magisk er at vi kan sentrere et element horisontalt ved å sette høyre og venstre margin til `auto`.
+
+🤓 Når vi ikke bruker `.` eller `#` foran en CSS-regel refererer vi til en HTML-tag.
 
 ```css
 main {
@@ -172,7 +163,7 @@ main {
 }
 ```
 
-Ved å sette bredden på bildet til å være 100% passer man på at det ikke blir for stort.
+Ved å sette bredden på bildet til å være 100 % passer man på at det ikke blir for stort.
 
 ```css
 .image {
@@ -180,7 +171,7 @@ Ved å sette bredden på bildet til å være 100% passer man på at det ikke bli
 }
 ```
 
-Bakgrunnsfarge er ganske selvforklarende, men det er ikke `border-radius`. Man kan bruke verdien for å runde av hjørnene som i skjermbildet. For at tekstene ikke skal være helt i kanten av elementet kan man feks legge på 10px padding på alle sider (top, bunn, høyre, venstre).
+🤓 Man kan bruke `border-radius` for å runde av hjørnene som vist i skjermbildet. For at tekstene ikke skal være helt i kanten av elementet kan man f.eks. legge på `10px` padding på alle sider (top, bunn, høyre, venstre).
 
 > `padding: 10px;` er en kortere måte å definere padding på alle kanter av et element. Man kunne definert den for hver kant ved å skrive feks. `padding-left: 10px;` osv.
 
@@ -195,6 +186,8 @@ Bakgrunnsfarge er ganske selvforklarende, men det er ikke `border-radius`. Man k
   padding: 10px;
 }
 ```
+
+🤓 Hvis flere CSS-regler har samme innhold kan man slå de sammen med å bruke kommma før styling-innholdet!
 
 </details>
 
@@ -337,6 +330,7 @@ Vi legger `<script>`-taggen vår i slutten av `<body>` i `index.html`:
 
 ```html
 <body>
+  ...
   <script>
     alert("Hei fra JavaScript!");
   </script>
@@ -349,7 +343,7 @@ Vi legger `<script>`-taggen vår i slutten av `<body>` i `index.html`:
 
 Det blir fort rotete å blande HTML- og Javascript i samme fil. På samme måte som vi kan ha CSS i en egen fil, kan Javascript også flyttes til en egen fil, og lastes inn i HTML-filen for en mer ryddig struktur.
 
-🏆 Flytt JavaScripten til en egen fil, og referer til denne fra `index.html`.
+🏆 Flytt JavaScript-koden til en egen fil og referer til denne fra `index.html`.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -359,7 +353,7 @@ Vi legger `<script>`-taggen vår i slutten av `<body>` i `index.html`:
 ```html
 <!-- index.html -->
 <body>
-    <script type="text/javascript" src="filnavn.js">
+  <script type="text/javascript" src="filnavn.js"></script>
 </body>
 ```
 
@@ -372,11 +366,11 @@ alert("Hei fra JavaScript!");
 
 ## 3) Lytt til klikk på en knapp
 
-Det er litt irriterende at alerten dukker opp hver gang vi laster inn siden på nytt. HTML-siden vår har en _like_-knapp, og vi ønsker å vise alerten først når du trykker på knappen.
+Det er litt irriterende at alerten dukker opp hver gang vi laster inn siden på nytt. HTML-siden vår har en _like_-knapp (👍), og vi ønsker å vise alerten først når du trykker på knappen.
 
 ### 3a) Få tak i knappen med JavaScript
 
-🏆 Bruk `document`-globalen for å huke tak i knappen vår. Kjør `console.log` på returverdien for å se hva vi fikk tilbake.
+🏆 Bruk den globale `document`-variabelen for å huke tak i knappen vår ved å bruke metoden `getElementById`. Kall `console.log` på returverdien for å se hva vi får tilbake.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -394,18 +388,18 @@ console.log(knapp);
 
 ### 3b) Lytte på klikk
 
-Nå har vi fått tak i en referanse til knappen med JavaScript. Det neste steget er å lytte til hendelser som utløses av knappen.
+Nå har vi fått tak i en referanse til knappen med JavaScript. Det neste steget er å lytte til hendelser som utløses av knappen. Eksempel på hendelser er f.eks. når musepekeren ligger på knappen (`mouseOver`) eller når man trykker på en knapp (`click`).
 
-🏆 Bruk referansen til knappen til å sette på en _event listener_ som lytter på klikk på knappen.
+🏆 Bruk referansen til knappen til å sette på en _event-listener_ som lytter på klikk på knappen.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
 
-Her må vi bruke funksjonen `addEventListener`, som ligger på noden vi hentet fra DOM-en. Funksjonen tar inn to argumenter; hendelsen du ønsker å lytte på, i vårt tilfelle "click", og en funksjon som skal kjøre hver gang hendelsen trigges.
+Her må vi bruke funksjonen `addEventListener` som ligger på noden vi hentet fra DOM-en. Funksjonen tar inn to argumenter: hendelsen du ønsker å lytte på, i vårt tilfelle `click`; og en funksjon som skal kjøre hver gang hendelsen trigges.
 
 ```js
 knapp.addEventListener("click", () => {
-  alert("Du liket posten!");
+  alert("Du likte posten!");
 });
 ```
 
@@ -417,24 +411,51 @@ knapp.addEventListener("click", () => {
 
 ### 4) Bygg opp HTML fra JavaScript
 
-<!-- Todo: Ordne på teksten under -->
+Frem til nå har vi bygget opp feeden med statisk HTML-kode. I den virkelige verden ønsker vi å bygge opp feeden basert på en datakilde med dynamiske data -- f.eks. fra et eksternt api.
 
-Frem til nå har vi bygget opp feeden med statisk HTML-kode. I den virkelige verden ønsker vi å bygge opp feeden basert på en datakilde med dynamiske data - f.eks. fra et eksternt api.
+I denne oppgaven er datakilden vår [`images.js`](./src/img/images.js) som ligger i [`img`](./src/img/)-mappa. Der er det definerert en liste av objekter hvor hvert objekt representerer innholdet til en post.
 
-I denne oppgaven er datakilden vår `images.js` som ligger i `img`-mappa. Der er det definerert en liste av objekter hvor hvert objekt representerer innholdet til en post.
+Før vi begynner kan vi slette all HTML-kode som ligger i main-elementet i [`index.html`](./src/index.html). Du kan erstatte det med koden under
 
-Du skal vi slette all html-kode som ligger i posts-elementet i `index.html` og erstatte innholdet med dynamiske data vha JavaScript.
+```html
+<section class="posts"></section>
+```
 
-### 4a) Vis ett bilde
+I løpet av de neste oppgavene skal vi erstatte innholdet med dynamiske data ved hjelp av JavaScript.
 
-Nå skal du bruke JavaScript for å vise frem et bilde.
+### 4a) Lage HTML-elementer ved bruk av JavaScript
+
+🏆 Legg til ett artikkel-element i seksjons-elementet ved bruk av JavaScript
+
+💡 For å lage et HTML-element fra JavaScript kan vi bruke `createElement`-funksjonen.
+
+💡 Du kan bruke metoden `appendChild` for å legge til elementer i andre elementer.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
 
-.....Litt tekst her, kanskje...
+```js
+const seksjonsElement = document.getElementById("posts");
+
+const post = document.createElement("article");
+
+seksjonsElement.appendChild(post);
+```
+
+</details>
+
+### 4b) Vis ett bilde
+
+🏆 Nå skal du bruke JavaScript for å vise frem ett bilde.
+
+💡 Du kan legge til `src`-attributtet og andre attributter som verdier på elementene du lager. For eksempel: `bildeElement.src="./link-til-bildet"`
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
 
 ```js
+const seksjonsElement = document.getElementById("posts");
+
 const image = document.createElement("img");
 image.className = "image";
 image.src = "./img/working.jpeg";
@@ -444,13 +465,12 @@ const post = document.createElement("article");
 post.className = "post";
 post.appendChild(image);
 
-const hovedElement = document.getElementById("posts");
-hovedElement.appendChild(post);
+seksjonsElement.appendChild(post);
 ```
 
 </details>
 
-### 4b) Vis alle bildene
+### 4c) Vis alle bildene
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -482,9 +502,9 @@ posts.map(lagPostContent).forEach((postAsDomElement) => {
 
 </details>
 
-### 4c) Vis author
+### 4d) Vis author
 
-### 4d) Vis med metadata
+### 4e) Vis med metadata
 
 Timestamp; egen oppgave mtp. new Date(...).toLocalDateString(...)
 Author og description
