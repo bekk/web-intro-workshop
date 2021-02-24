@@ -74,6 +74,8 @@ CSS er verktøyet vi bruker for å gi HTML det utseendet vi ønsker. Hvor ting s
 
 > Litt på siden, så er CSS en norsk oppfinnelse 💪
 
+Man kan sette styling direkte på et HTML element, men den vanligste måten å style på er å ha CSS koden i en egen fil.
+
 HTML-elementer har ofte et `class`-attributt, som kan deles av flere elementer. De kan også ha et `id`-attributt, som er unik per element. CSS bruker `class`-attributt og `id`-attributt for å referere til elementer.
 
 Klasser refereres til med punktum før klassenavnet i CSS.
@@ -94,9 +96,11 @@ For eksempel: `<p id="avsnitt">Hei</p>` vil refereres til med følgende CSS-rege
 }
 ```
 
-🏆 Sett overskriften din til midten av siden, med `text-align` i CSS, og gjør teksten rød.
+📚 Se også [oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-2) for mer informasjon om selectorer, pseudo-klasser og box-model .
 
-💡 CSS-kode kan du legge inne i `<style>` tags, som du plasserer innenfor `<head>`-seksjonen av siden din.
+🏆 Lag en ny fil som heter index.css. Denne skal du bruke for å style siden din. Med CSS, sett overskriften din til midten av siden, med `text-align` i CSS, og gjør teksten rød.
+
+💡 Eksterne filer med CSS kode kan du legge inne i `<style>` tags, som du plasserer innenfor `<head>` seksjonen av siden din. Du kan refere til filen på tilsvarende måte som du la inn bildet ditt i en tidligere oppgave.
 
 💡 Les på [MDN-artikkelen](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) om `text-align`.
 
@@ -187,6 +191,128 @@ Ved å sette bredden på bildet til å være 100 % passer man på at det ikke bl
 
 </details>
 
+## Interaktive HTML-komponenter
+
+Frem til nå har vi lagt til statiske HTML-elementer, som viser tekst eller bilder. På vår Bekkstagram ønsker vi at det skal være mulighet for å legge inn kommentarer, samt muligheten for å like et bilde.
+
+Vi skal legge til HTML-elementer for dette, slik at vi har komponentene klare når vi skal bruke JavaScript for å få ting på siden vår til å skje.
+
+- For å kunne like et bilde, trenger vi en knapp.
+- For å kunne kommentere på et bilde trenger vi et tekstfelt hvor brukeren kan skrive inn kommentar, i tillegg til en knapp slik at brukeren kan lagre kommentaren sin.
+
+🏆 Sett inn en knapp under beskrivelsen av bildet ditt. Knappen skal ha en 👍-emoji på seg.
+💡 Vi ønsker på et senere tidspunkt kunne se hvor mange likes et bilde har fått, så det kan være nyttig å legge knappen inn i en egen HTML-bolk med f.eks `<section>`
+
+🏆 Lag en midlertidig seksjon for å vise tidligere kommentarer. Vi skal legge til funksjonaliteten senere, så får nå kan du legge inn midlertidig tekst i denne seskjonen.
+
+🏆 Lag et felt hvor brukeren kan skrive inn en kommentar, og en knapp slik at brukeren kan lagre kommentaren. Vi skal kun legge inn komponentene i første omgang, funksjonaliteten legger vi på senere.
+💡 Tekstfeltet og knappen er knyttet sammen, og bør grupperes på et vis. Funksjonaliteten er veldig likt et skjema. Finnes det noen HTML-komponenter for dette?
+
+<details><summary>🚨 Løsningsforslag</summary>
+
+Under vår `<img>`-tag lager vi en ny seksjon. I denne seksjonen vi legger inn en `<button>`-komponent og en placeholder for hvor vi skal vise antall likes
+
+```html
+<main>
+  <h1>Bekkstagram</h1>
+  <article class="post">
+    <h3 class="author">olav</h3>
+    <img
+      class="image"
+      src="./img/working.jpeg"
+      alt="Fem personer som jobber sammen rundt et bord"
+    />
+    <p class="description">
+      God trøkk på jobb i dag
+      <span role="img" aria-label="Emoji med solbriller">😎</span>
+    </p>
+    <section class="post-details">
+      <p class="likes">
+        Likes: 0
+        <button class="like-button">
+          <span role="img" aria-label="Lik bildet">👍</span>
+        </button>
+      </p>
+    </section>
+  </article>
+</main>
+```
+
+Seksjonen for å vise tidligere kommentarer legger vi under like knappen. Vi har gitt vår seksjon klasse-navnet "comments", og lagt til noen statiske kommentarer som midlertidig innhold. Legg merke til at vi gir de ulike seksjonene et `id` eller `class` attributt for å skille de ulike seksjonene/elementene.
+
+Kommentarfeltet grupperes ved å bruke HTML-elementet `<form>` (skjema). Inne i skjemaet vårt lager vi et tekstfelt og en knapp. Vi bruker `<form>` når vi skal lage en seksjon som inneholder interaktive elementer som skal sende inn informasjon.
+
+```html
+<main>
+  <h1>Bekkstagram</h1>
+  <article class="post">
+    <h3 class="author">olav</h3>
+    <img
+      class="image"
+      src="./img/working.jpeg"
+      alt="Fem personer som jobber sammen rundt et bord"
+    />
+    <p class="description">
+      God trøkk på jobb i dag
+      <span role="img" aria-label="Emoji med solbriller">😎</span>
+    </p>
+    <section class="post-details">
+      <p class="likes">
+        Likes: 0
+        <button class="like-button">
+          <span role="img" aria-label="Lik bildet">👍</span>
+        </button>
+      </p>
+    </section>
+    <section class="comments">
+      <article class="comment">
+        <p class="comment-user">reidar</p>
+        <p class="comment-text">Her jobbes det godt ser jeg!</p>
+        <p class="timestamp">5 hours ago</p>
+      </article>
+      <article class="comment">
+        <p class="comment-user">frithjof</p>
+        <p class="comment-text">
+          La det rulle inn
+          <span role="img" aria-label="Emoji med pengemunn">🤑</span>
+        </p>
+        <p class="timestamp">5 hours ago</p>
+      </article>
+    </section>
+    <form class="comment-form">
+      <input placeholder="Add a comment..." value="" id="comment-text-input" />
+      <button class="comment-form-button">Post</button>
+    </form>
+  </article>
+</main>
+```
+
+</details>
+
+## Navigere til ulike sider
+
+Nå begynner elementene på bilde-siden å komme på plass 🤩 Men hva er vel en webside uten mulighet for navigasjon? På vår Bekkstagram ønsker vi å ha mer enn muligheten for å se et enkelt bilde. Vi ønsker å kunne navigere til en ny side, en feed. Vi skal gjøre mer med dette senere, men foreløpig legger vi inn lenken slik at du kan navigere deg mellom disse sidene.
+
+🏆 Lag en ny .html fil, eller kopier index.html og gi den et nytt navn (eks. feed.html). For å skille mellom de ulike sidene kan du endre title slik at du får en annen tittel på taben. Legg til en lenke på overskriften "Bekkstagram" som navigerer brukeren mellom de to sidene dine.
+
+<details><summary>🚨 Løsningsforslag</summary>
+
+`<a>`-tagen kan brukes til å lage lenker. I vårt tilfelle referer vi til de ulike html-filene våre, men vi kan også få taggen til å referere til eksterne sider som https://www.bekk.no/
+
+```html
+<header class="site-header">
+  <h1><a href="index.html">Bekkstagram</a></h1>
+</header>
+```
+
+```html
+<header class="site-header">
+  <h1><a href="feed.html">Bekkstagram</a></h1>
+</header>
+```
+
+</details>
+
 # JavaScript
 
 📚 [Les mer i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/06-filer)
@@ -215,7 +341,7 @@ Vi legger `<script>`-taggen vår i slutten av `<body>` i `index.html`:
 
 ## 2) Referere til ekstern fil
 
-Det blir fort rotete å blande HTML og JavaScript i samme fil. JavaScript-koden kan flyttes til en egen fil og lastes inn i HTML-filen for en mer ryddig struktur.
+Det blir fort rotete å blande HTML- og Javascript i samme fil. På samme måte som vi kan ha CSS i en egen fil, kan Javascript også flyttes til en egen fil, og lastes inn i HTML-filen for en mer ryddig struktur.
 
 🏆 Flytt JavaScript-koden til en egen fil og referer til denne fra `index.html`.
 
