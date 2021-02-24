@@ -96,7 +96,7 @@ For eksempel: `<p id="avsnitt">Hei</p>` vil refereres til med følgende CSS-rege
 }
 ```
 
-Se også Git-booken for mer informasjon om selectorer, pseudo-klasser og box-model.
+📚 Se også Git-booken for mer informasjon om selectorer, pseudo-klasser og box-model.
 
 🏆 Lag en ny fil som heter index.css. Denne skal du bruke for å style siden din. Med CSS, sett overskriften din til midten av siden, med `text-align` i CSS, og gjør teksten rød.
 
