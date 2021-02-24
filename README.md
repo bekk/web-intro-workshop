@@ -405,11 +405,70 @@ knapp.addEventListener("click", () => {
 
 </details>
 
+### 3c) Like et bilde
+
+Fjern alerten og legg til counter på klikk
+
+<!-- Oppgavetekst her -->
+
+## Med `onclick`-handler 🕹
+
+```html
+<button onclick="like()">Like</button>
+<script>
+  function like() {
+    alert("I like it! #like4like #l4l");
+  }
+</script>
+```
+
+#### Med `event listener` ⚡️
+
+```html
+<button id="like-button-1">Like</button>
+<script>
+  const likeButton = document.getElementById("like-button-1");
+
+  likeButton.addEventListener("click", function (event) {
+    alert("I like it! #like4like #l4l");
+  });
+</script>
+```
+
+**NB!** Bekkstagram-feeden vår kan inneholde mange like-knapper og da er det viktig at hver av de har sin unike id for å få tak i disse.
+
+#### Med like-oppdatering (counter) 👍
+
+```html
+<p><span id="like-value-1">1</span> likes</p>
+<button onclick="like()">Like</button>
+<script>
+  function like() {
+    likeSpan = document.getElementById("like-value-1");
+    alert("I like it! #like4like #l4l");
+    likeSpan.innerHTML = Number(likeSpan.textContent) + 1;
+  }
+</script>
+```
+
+### Todo ✅
+
+<!-- Gjør todo hvis tid-->
+
+- Utvide til å kunne trykke knappene uavhengige av hverandre og de endrer hver sin counter (løse id-problematikk)
+
 📚 [Les mer om hendelser i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/07-dom-apiet#hendelser)
 
 📚 [Les mer om JavaScript-funksjoner i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/04-funksjoner)
 
-### 4) Bygg opp HTML fra JavaScript
+## 4) Kommentere et bilde
+
+<!-- Oppgave iog oppgavetekst inn her-->
+
+Timestamp; egen oppgave mtp. new Date(...).toLocalDateString(...)
+Author og description
+
+## 5) Bygg opp HTML fra JavaScript
 
 Frem til nå har vi bygget opp feeden med statisk HTML-kode. I den virkelige verden ønsker vi å bygge opp feeden basert på en datakilde med dynamiske data -- f.eks. fra et eksternt api.
 
@@ -423,7 +482,7 @@ Før vi begynner kan vi slette all HTML-kode som ligger i main-elementet i [`ind
 
 I løpet av de neste oppgavene skal vi erstatte innholdet med dynamiske data ved hjelp av JavaScript.
 
-### 4a) Lage HTML-elementer ved bruk av JavaScript
+### 5a) Lage HTML-elementer ved bruk av JavaScript
 
 🏆 Legg til ett artikkel-element i seksjons-elementet ved bruk av JavaScript
 
@@ -444,7 +503,7 @@ seksjonsElement.appendChild(post);
 
 </details>
 
-### 4b) Vis ett bilde
+### 5b) Vis ett bilde
 
 🏆 Nå skal du bruke JavaScript for å vise frem ett bilde.
 
@@ -470,7 +529,7 @@ seksjonsElement.appendChild(post);
 
 </details>
 
-### 4c) Vis alle bildene
+### 5c) Vis alle bildene
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -502,17 +561,16 @@ posts.map(lagPostContent).forEach((postAsDomElement) => {
 
 </details>
 
-### 4d) Vis author
+### 5d) Vis author
 
-### 4e) Vis med metadata
-
-Timestamp; egen oppgave mtp. new Date(...).toLocalDateString(...)
-Author og description
+### 5e) Vis med metadata
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
 
-.....Litt tekst her, kanskje...
+Løsningsforslaget under gjentar kanskje endel kode? Dette er grunnen til at det finnes flere rammeverk der ute til JavaScript! React er et eksempel på et slikt rammeverk.
+
+Rammeverkene forenkler jobben vår når vi lager web applikasjoner, men i bunn av alle rammeverk ligger JavaScript. Det er derfor nyttig å lære seg hvilke deler som kommer fra JavaScript, og hvilke deler som legges til av rammeverket.
 
 ```js
 const lagPostContent = (post) => {
@@ -565,55 +623,13 @@ const lagPostContent = (post) => {
 
 </details>
 
-# Like et bilde
+# Ekstraoppgaver
 
-## Med `onclick`-handler 🕹
+Under finner du noen ekstraoppgaver som du kan bryne deg på om du får tid, eller om du trenger noen ekstra utfordringer på et senere tidspunkt.
 
-```html
-<button onclick="like()">Like</button>
-<script>
-  function like() {
-    alert("I like it! #like4like #l4l");
-  }
-</script>
-```
+## Vis mer 👀
 
-## Med `event listener` ⚡️
-
-```html
-<button id="like-button-1">Like</button>
-<script>
-  const likeButton = document.getElementById("like-button-1");
-
-  likeButton.addEventListener("click", function (event) {
-    alert("I like it! #like4like #l4l");
-  });
-</script>
-```
-
-**NB!** Bekkstagram-feeden vår kan inneholde mange like-knapper og da er det viktig at hver av de har sin unike id for å få tak i disse.
-
-## Med like-oppdatering (counter) 👍
-
-```html
-<p><span id="like-value-1">1</span> likes</p>
-<button onclick="like()">Like</button>
-<script>
-  function like() {
-    likeSpan = document.getElementById("like-value-1");
-    alert("I like it! #like4like #l4l");
-    likeSpan.innerHTML = Number(likeSpan.textContent) + 1;
-  }
-</script>
-```
-
-## Todo ✅
-
-- Utvide til å kunne trykke knappene uavhengige av hverandre og de endrer hver sin counter (løse id-problematikk)
-
-# Vis mer 👀
-
-## 1) Vis mer
+### 1) Vis mer
 
 Noen ganger kan beskrivelser bli lange, og vi ønsker ikke alltid å vise all teksten når vi scroller i feeden. I denne oppgaven skal vi utvide og komprimere beskrivelsen under bildet når brukeren trykker på teksten.
 
@@ -644,7 +660,7 @@ desc.addEventListener("click", () => {
 
 📚 [Les mer i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/06-filer)
 
-## 2) Vis mer eller ikke?
+### 2) Vis mer eller ikke?
 
 Men, det er ikke alltid beskrivelsen er lang nok til å skjule. Da kan det være greit å sjekke lengden på teksten før vi legger på en event-listener.
 
@@ -663,7 +679,7 @@ if (tooLong) {
 
 </details>
 
-## 3) Skjule lang tekst by default
+### 3) Skjule lang tekst by default
 
 Nå kan vi skjule og vise lang beskrivelse på klikk - wihu! 🎉
 Siste steg er å skjule for lang tekst by default, så da må vi legge på denne klassen fra starten av. Legg på klassenavnet `description--closed` i HTMLen på beskrivelses-elementet.
@@ -682,26 +698,18 @@ I samme slengen kan du legge på en musepeker (`cursor: pointer`) på beskrivels
 
 </details>
 
-### Ideer 💡:
+### 4) Toggle kommentarfeltet
 
-- Knytte sammen CSS og JS
-- Animasjon
-- "... mer"
-- line-clamp = 1
-- string.length <= 60
-- Bytte ut tekst?
+Nå skal vi lage en knapp som styrer visning av kommentarfeltet!
 
-# Toggle kommentarfeltet
+🏆 Lag en knapp som viser kommentarene dersom de er skjult, og skjuler kommentarene dersom de er vist. Knappen skal bytte tekst avhengig av om den skal vise eller skjule.
 
-Nå skal vi lage en knapp som styrer visning av kommentarfeltet! Lag en knapp som viser kommentarene dersom de er skjult, og skjuler kommentarene dersom de er vist.
-Hint: I denne oppgaven kan du bruke JavaScript til å tilegne et HTML-element en CSS klasse som skjuler kommentar-seksjonen
+💡 I denne oppgaven kan du bruke JavaScript til å tilegne et HTML-element en CSS klasse, og bruse CSS til å skjule kommentar-seksjonen
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
-Slik løser vi oppgaven:
-
-Oppgaven kan løses på flere måter, en av disse er å benytte Javascript til å endre CSSen på kommentar-seksjonen.
-I HMTL-filen din lager du en knapp som håndterer toggle:
+Oppgaven kan løses på flere måter. Vår løsning bruker en kombinasjon mellom det vi har lært tidligere om HTML, CSS og JavaScript, og benytter Javascript til å endre CSSen på kommentar-seksjonen.
+I HTML-filen din lager du en knapp som skal håndtere å kunne toggles:
 
 ```html
 <button id="hide-button" type="button">Skjul</button>
