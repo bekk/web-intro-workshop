@@ -27,7 +27,7 @@ function addComment(){
    var timestamp = document.createElement("p")
    timestamp.setAttribute("class", "timestamp") 
    // Lagt til statisk tidsstempe TODO: Skal vi ha noe annet her?
-   timestamp.appendChild(document.createTextNode("2 seconds ago"))
+   timestamp.appendChild(document.createTextNode(new Date().getSeconds()  + ' seconds ago'))
 
    // Legge til de ulike paragrafene under artikkelen
    commentBox.appendChild(user)
@@ -35,5 +35,5 @@ function addComment(){
    commentBox.append(timestamp)
    
    // Legge artikkelen, med paragrafene, inn under seksjonen
-   commentSection[0].appendChild(article)
+   commentSection[0].appendChild(commentBox)
 }
