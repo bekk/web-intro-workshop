@@ -411,6 +411,8 @@ Fjern alerten og legg til counter på klikk
 
 <!-- Oppgavetekst her -->
 
+Gratulerer! Du har nå likt bilde. Men det ser ikke ut som om antall likes oppdateres 🤔? Det kan vi gjøre noe med. Istedenfor å trigge en alert, så kan vi få klikke til å oppdatere en teller som holder styr på antall likes bildet har fått.
+
 ## Med `onclick`-handler 🕹
 
 ```html
@@ -443,11 +445,11 @@ Fjern alerten og legg til counter på klikk
 <p><span id="like-value-1">1</span> likes</p>
 <button onclick="like()">Like</button>
 <script>
+  let counter = 0;
   function like() {
-    likeSpan = document.getElementById("like-value-1");
-    alert("I like it! #like4like #l4l");
-    likeSpan.innerHTML = Number(likeSpan.textContent) + 1;
-  }
+    counter += 1;
+    const likeParagraph = document.getElementsByClassName("like-paragraph")[0];
+    likeParagraph.innerText = counter + " likes";
 </script>
 ```
 
