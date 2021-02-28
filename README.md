@@ -228,8 +228,8 @@ Under vår `<img>`-tag lager vi en ny seksjon. I denne seksjonen vi legger inn e
     </p>
     <section class="post-details">
       <p class="likes">
-        Likes: 0
-        <button class="like-button">
+        Likes: <span id="like-value-1"> 0 </span>
+        <button id="like-button-1" class="like-button">
           <span role="img" aria-label="Lik bildet">👍</span>
         </button>
       </p>
@@ -258,8 +258,8 @@ Kommentarfeltet grupperes ved å bruke HTML-elementet `<form>` (skjema). Inne i 
     </p>
     <section class="post-details">
       <p class="likes">
-        Likes: 0
-        <button class="like-button">
+        Likes: <span id="like-value-1"> 0 </span>
+        <button id="like-button-1" class="like-button">
           <span role="img" aria-label="Lik bildet">👍</span>
         </button>
       </p>
@@ -407,58 +407,36 @@ knapp.addEventListener("click", () => {
 
 ### 3c) Like et bilde
 
-Fjern alerten og legg til counter på klikk
-
-<!-- Oppgavetekst her -->
-
 Gratulerer! Du kan nå like et bilde. Men det ser ikke ut til at antall likes oppdateres? 🤔 Det kan vi gjøre noe med!
 Istedenfor å trigge en alert så kan vi oppdatere en teller som holder styr på antall likes bildet har fått når vi klikker på knappen.
 
-## Med `onclick`-handler 🕹
+🏆 Skriv om slik at knappen viser antall likes, og trykk på knappen legger til likes.
 
-```html
-<button onclick="like()">Like</button>
-<script>
-  function like() {
-    alert("I like it! #like4like #l4l");
-  }
-</script>
-```
 
-#### Med `event listener` ⚡️
+<details>
+<summary>🚨 Løsningsforslag</summary>
 
-```html
-<button id="like-button-1">Like</button>
-<script>
+Vi må endre funksjonen som kjøres når vi trykker på knappen, slik at den leser ut den gamle verdien, legger til en like og deretter setter denne verdien tilbake i knappen. Dette gjør vi ved å bruker
+
+```js
   const likeButton = document.getElementById("like-button-1");
 
-  likeButton.addEventListener("click", function (event) {
-    alert("I like it! #like4like #l4l");
+  likeButton.addEventListener("click", () => {
+    likeSpan = document.getElementById("like-value-1");
+    likeSpan.innerHTML = Number(likeSpan.innerHTML) + 1;
   });
-</script>
 ```
+</details>
 
+<!-- 
 **NB!** Bekkstagram-feeden vår kan inneholde mange like-knapper og da er det viktig at hver av de har sin unike id for å få tak i disse.
-
-#### Med like-oppdatering (counter) 👍
-
-```html
-<p><span id="like-value-1">1</span> likes</p>
-<button onclick="like()">Like</button>
-<script>
-  let counter = 0;
-  function like() {
-    counter += 1;
-    const likeParagraph = document.getElementsByClassName("like-paragraph")[0];
-    likeParagraph.innerText = counter + " likes";
-</script>
-```
 
 ### Todo ✅
 
-<!-- Gjør todo hvis tid-->
+Gjør todo hvis tid
 
 - Utvide til å kunne trykke knappene uavhengige av hverandre og de endrer hver sin counter (løse id-problematikk)
+-->
 
 📚 [Les mer om hendelser i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/07-dom-apiet#hendelser)
 
