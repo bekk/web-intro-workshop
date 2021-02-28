@@ -513,6 +513,7 @@ Før vi kan legge til kommentaren til seksjonen vi nettopp hentet ut, er vi nød
 
 💡 For å lage et nytt element kan man bruke `createElement()`.
 
+<details>
 <summary>🚨 Løsningsforslag</summary>
 
 ```js
