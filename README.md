@@ -467,6 +467,185 @@ Gratulerer! Du har nå likt bilde. Men det ser ikke ut som om antall likes oppda
 
 <!-- Oppgave iog oppgavetekst inn her-->
 
+Nå har du klart å like et bilde, men innimellom er noe så bra at vi bare må kommentere. Så derfor skal vi nå legge på funksjonalitet som gjør at du kan fortelle verden hva du tenker om bildene. I HTML/CSS oppgavene laget vi "skallet" til kommentarboksene, dette skal vi gjennbruke nå.
+
+## 4a) Få tak i seksjonen med kommentarer
+
+Vi begynner med å bygge skjellete, før vi legger til mer og mer etter hvert. Først skal vi hente ut seksjonen med kommentarer, så opprette en ny HTML-artikkel og til slutt legge det nye elementet på seksjonen med kommentarer. For å bryte det ned kan vi begynne med å ta en titt på HTML syntaksen.
+
+```html
+<section class="comments">
+  <article class="comment">
+    <p class="comment-user">reidar</p>
+    <p class="comment-text">Her jobbes det godt ser jeg!</p>
+    <p class="timestamp">5 hours ago</p>
+  </article>
+</section>
+<form class="comment-form">
+  <input placeholder="Add a comment..." value="" id="comment" />
+  <button class="comment-form-button" type="button" onclick="addComment()">
+    Post
+  </button>
+</form>
+```
+
+Det vi nå ser på er oppbygningen av kommentarseksjonen. Vi vet nå at en kommentar ligger under taggen `<article>`, som inneholder tre `<p>`-tags med informasjon. Og at alle kommentarene ligger under `<section>`-tagen. Så først må vi "få tak i" denne seksjonen før vi kan modifisere den ved å legge til flere kommentarer. Vi har og allerede tatt oss den friheten og legge til `addComment()` funksjonen på knappen. Slik at det er knappen som lager en ny kommentar.
+
+🏆 Hent ut `<section>`
+💡 For å hente ut denne seksjonen kan vi bruke `getElementByClassName()`
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+
+```js
+function addComment() {
+  // Hente ut seksjonen med kommentarer
+  var commentSection = document.getElementsByClassName("comments");
+}
+```
+
+</details>
+
+## 4b) Lag en ny kommentarboks
+
+Før vi kan legge til kommentaren til seksjonen vi nettopp hentet ut, er vi nødt til å opprettet et HTML-element `<article>`.
+
+🏆 Lag en `<article>`-tag
+
+💡 For å lage et nytt element kan man bruke `createElement()`.
+
+<summary>🚨 Løsningsforslag</summary>
+
+```js
+function addComment() {
+  // Opprette en ny HTML-element
+  var commentBox = document.createElement("article");
+}
+```
+
+</details>
+
+Supert, nå har du laget et nytt element. Men, vi ser det ikke på siden 🤔 Hvordan kan vi vite at det faktisk eksisterer? Først må vi sørge for at kommentaren legger seg under seksjonen vi hentet ut tidligere. Dette kan virke litt vanskelig, men vi skal få det til. Siden `section` inneholder en liste med andre tag's må vi spesifisere at vi ønsker å legge til kommentaren i det første elementet under `section`.
+Vi kan da skrive `commentSection[0]` for å spesifisere dette. Videre må vi legge til `<article>`-tagen på denne seksjonen.
+
+🏆 Legg til `<article>`-tagen på `<section>`
+
+💡 Vi kan bruke `appendChild("taggen man skal legge til") for å gjøre dette
+
+Nå skal noe skje, men for å se det må vi åpne utviklerverktøyet og finne `section` med kommentarer. Dukker det opp noe når du trykker på post?
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+
+```js
+function addComment() {
+  // Hente ut seksjonen med kommentarer
+  var commentSection = document.getElementsByClassName("comments");
+
+  // Opprette en ny HTML-artikkel og sette klassenavnet
+  var commentBox = document.createElement("article");
+  commentSection[0].appendChild(commentBox);
+}
+```
+
+</details>
+
+Nå har du en artikkel-tag klar for kommentarer. Det vi må gjøre nå før vi fyller den med informasjon, er å gi den samme styling som de andre kommentarene sånn at vi kan se den uten å bruke utviklerverktøy.
+
+I koden vår, før vi bruker `appendChild` ønsker vi nå å sette attributter på artikkel-taggen. Disse attributtene skal være en klasse som har samme css styling som de andre.
+
+🏆 Legg til CSS klassen `comment` på artikkel-taggen.
+
+💡 For å sette styling kan vi bruke `setAttribute()` som tar inn to paramtere. Ett er hvilket attribut du vil sette, og det andre er hva det heter.
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+
+```js
+function addComment() {
+  // Hente ut seksjonen med kommentarer
+  var commentSection = document.getElementsByClassName("comments");
+
+  // Opprette en ny HTML-artikkel og sette klassenavnet
+  var commentBox = document.createElement("article");
+  commentBox.setAttribute("class", "comment");
+
+  commentSection[0].appendChild(commentBox);
+}
+```
+
+</details>
+
+Nå skal vi kunne se en grå boks dukke opp når vi trykker på post.
+
+## 4c) Legg til kommentar
+
+Det er ikke like gøy å poste bare tomme kommentarfelter. Så nå skal vi hente ut kommentaren fra inputfeltet og printe den ut i kommentarboksen.
+
+Da vi tittet på HTML oppsettet tidligere så vi at all dataen vi viste frem i kommentaren var lagt inn i `p`-tagger. Så for å vise kommentaren må vi opprette en slik tag.
+
+🏆 Lag en `p`-tag og sett CSS-klassen
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+
+```js
+function addComment() {
+  // Hente ut seksjonen med kommentarer
+  var commentSection = document.getElementsByClassName("comments");
+
+  // Opprette en ny HTML-artikkel og sette klassenavnet
+  var commentBox = document.createElement("article");
+  commentBox.setAttribute("class", "comment");
+
+  var user = document.createElement("p");
+  user.setAttribute("class", "comment-text");
+
+  commentSection[0].appendChild(commentBox);
+}
+```
+
+</details>
+
+Nå må vi hente ut kommentaren fra inputfeltet. For å gjøre det kan man f.eks. skrive `document.getElementByClassName("kommentarInput").value`, da får vi tak i verdien inne i dette elementet.
+
+🏆 Hent ut verdien i kommentarfeltet
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+
+```js
+var inputText = document.getElementById("comment").value;
+```
+
+</details>
+
+Så ønsker vi å legge verdien til kommentaren inn i `p`-taggen.
+
+🏆 Legg til `inputText` i `p`-taggen og legg `p`-taggen under artikkel-elementet.
+💡 For å legge til tekst i et element kan vi bruke `document.createTextNode("inputText")`
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+
+```js
+var inputText = document.getElementById("comment").value;
+
+var comment = document.createElement("p");
+comment.setAttribute("class", "comment-text");
+comment.appendChild(document.createTextNode(inputText));
+
+commentBox.appendChild(comment);
+```
+
+</details>
+
+Prøv det ut og se om kommentaren din dukker opp.
+
+## 4d) Legg til brukernavn og tidstempel
+
+Nå er vi nesten i mål. Det vi ønsker å vise frem nå er hvem som har skrevet kommentaren og når den ble postet.
+
 Timestamp; egen oppgave mtp. new Date(...).toLocalDateString(...)
 Author og description
 
@@ -490,7 +669,7 @@ I løpet av de neste oppgavene skal vi erstatte innholdet med dynamiske data ved
 
 💡 For å lage et HTML-element fra JavaScript kan vi bruke `createElement`-funksjonen.
 
-💡 Du kan bruke metoden `appendChild` for å legge til elementer i andre elementer.
+💡 Du kan bruke metoden `appendChild` for å legge til en tagg under andre tagger i koden.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
