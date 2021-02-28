@@ -465,8 +465,6 @@ Gratulerer! Du har nå likt bilde. Men det ser ikke ut som om antall likes oppda
 
 ## 4) Kommentere et bilde
 
-<!-- Oppgave iog oppgavetekst inn her-->
-
 Nå har du klart å like et bilde, men innimellom er noe så bra at vi bare må kommentere. Så derfor skal vi nå legge på funksjonalitet som gjør at du kan fortelle verden hva du tenker om bildene. I HTML/CSS oppgavene laget vi "skallet" til kommentarboksene, dette skal vi gjennbruke nå.
 
 ## 4a) Få tak i seksjonen med kommentarer
@@ -492,6 +490,7 @@ Vi begynner med å bygge skjellete, før vi legger til mer og mer etter hvert. F
 Det vi nå ser på er oppbygningen av kommentarseksjonen. Vi vet nå at en kommentar ligger under taggen `<article>`, som inneholder tre `<p>`-tags med informasjon. Og at alle kommentarene ligger under `<section>`-tagen. Så først må vi "få tak i" denne seksjonen før vi kan modifisere den ved å legge til flere kommentarer. Vi har og allerede tatt oss den friheten og legge til `addComment()` funksjonen på knappen. Slik at det er knappen som lager en ny kommentar.
 
 🏆 Hent ut `<section>`
+
 💡 For å hente ut denne seksjonen kan vi bruke `getElementByClassName()`
 
 <details>
@@ -525,14 +524,14 @@ function addComment() {
 
 </details>
 
-Supert, nå har du laget et nytt element. Men, vi ser det ikke på siden 🤔 Hvordan kan vi vite at det faktisk eksisterer? Først må vi sørge for at kommentaren legger seg under seksjonen vi hentet ut tidligere. Dette kan virke litt vanskelig, men vi skal få det til. Siden `section` inneholder en liste med andre tag's må vi spesifisere at vi ønsker å legge til kommentaren i det første elementet under `section`.
+Supert, nå har du laget et nytt element. Men, vi ser det ikke på siden 🤔 Hvordan kan vi vite at det faktisk eksisterer? Først må vi sørge for at kommentaren legger seg under seksjonen vi hentet ut tidligere. Dette kan virke litt vanskelig, men vi skal få det til. Siden `<section>` inneholder en liste med andre tag's må vi spesifisere at vi ønsker å legge til kommentaren i det første elementet under `<section>`.
 Vi kan da skrive `commentSection[0]` for å spesifisere dette. Videre må vi legge til `<article>`-tagen på denne seksjonen.
 
 🏆 Legg til `<article>`-tagen på `<section>`
 
 💡 Vi kan bruke `appendChild("taggen man skal legge til") for å gjøre dette
 
-Nå skal noe skje, men for å se det må vi åpne utviklerverktøyet og finne `section` med kommentarer. Dukker det opp noe når du trykker på post?
+Nå skal noe skje, men for å se det må vi åpne utviklerverktøyet og finne `<section>` med kommentarer. Dukker det opp noe når du trykker på post?
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -552,7 +551,7 @@ function addComment() {
 
 Nå har du en artikkel-tag klar for kommentarer. Det vi må gjøre nå før vi fyller den med informasjon, er å gi den samme styling som de andre kommentarene sånn at vi kan se den uten å bruke utviklerverktøy.
 
-I koden vår, før vi bruker `appendChild` ønsker vi nå å sette attributter på artikkel-taggen. Disse attributtene skal være en klasse som har samme css styling som de andre.
+I koden vår, før vi bruker `appendChild()` ønsker vi nå å sette attributter på artikkel-taggen. Disse attributtene skal være en klasse som har samme css styling som de andre.
 
 🏆 Legg til CSS klassen `comment` på artikkel-taggen.
 
@@ -582,9 +581,9 @@ Nå skal vi kunne se en grå boks dukke opp når vi trykker på post.
 
 Det er ikke like gøy å poste bare tomme kommentarfelter. Så nå skal vi hente ut kommentaren fra inputfeltet og printe den ut i kommentarboksen.
 
-Da vi tittet på HTML oppsettet tidligere så vi at all dataen vi viste frem i kommentaren var lagt inn i `p`-tagger. Så for å vise kommentaren må vi opprette en slik tag.
+Da vi tittet på HTML oppsettet tidligere så vi at all dataen vi viste frem i kommentaren var lagt inn i `<p>`-tagger. Så for å vise kommentaren må vi opprette en slik tag.
 
-🏆 Lag en `p`-tag og sett CSS-klassen
+🏆 Lag en `<p>`-tag og sett CSS-klassen
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -622,7 +621,7 @@ var inputText = document.getElementById("comment").value;
 
 Så ønsker vi å legge verdien til kommentaren inn i `p`-taggen.
 
-🏆 Legg til `inputText` i `p`-taggen og legg `p`-taggen under artikkel-elementet.
+🏆 Legg til `inputText` i `<p>`-taggen og legg `p`-taggen under artikkel-elementet.
 💡 For å legge til tekst i et element kan vi bruke `document.createTextNode("inputText")`
 
 <details>
