@@ -648,12 +648,111 @@ commentBox.appendChild(comment);
 
 Prøv det ut og se om kommentaren din dukker opp.
 
-## 4d) Legg til brukernavn og tidstempel
+## 4d) Legg til tidsstempel
 
-Nå er vi nesten i mål. Det siste vi ønsker å vise frem nå er hvem som har skrevet kommentaren og når den ble postet.
+Nå er vi nesten i mål. Det siste vi ønsker å vise frem er når en kommentar ble postet.
 
-Timestamp; egen oppgave mtp. new Date(...).toLocalDateString(...)
-Author og description
+🏆 Lag en unik ID for hver kommentar
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+
+Dette gjør vi ved å lage en **global** teller og bruke `setAttribute` funksjonen
+i `addComment`-funksjonen. Husk å oppdatere telleren etter bruk!
+```js
+  let commentCount = 0
+
+  // Generere og sette en ID for kommentaren
+  const commentId = `comment-${commentCount}`
+  commentBox.setAttribute("id", commentId)
+
+  // Oppdatere antall kommentarer
+  commentCount += 1
+```
+</details>
+
+🏆 Lag et globalt objekt hvor vi skal lagre timestamps knyttet til den unike ID'en.
+
+💡 Timestamps kan opprettes ved å bruke `Date.now()`
+
+💡 Du kan se på globale objekter ved å skrive variabelnavnet i utvikler-konsollen i nettleseren.
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+Her lagrer vi timestamp sammen med en kommentarID
+
+```js
+  /* Utenfor addComment() */
+  const commentTimestamp = {}
+  
+  /* I addComment() */
+  // Lagre timestamp i global dictionary
+  commentTimestamp[commentId] = Date.now()
+```
+</details>
+
+🏆 Lag en funksjon for å oppdatere timestamp knyttet til en kommentarID
+
+💡 Funksjonen skal ta inn en kommentarID.
+
+💡 `setInterval` kan brukes for å kjøre funksjoner med gitte intervall.
+
+💡 Du kan bruke funksjonen `howLongAgo` for å regne ut hvor lang tid det er siden en kommentar ble publisert.
+
+
+```js
+function howLongAgo (timestamp) {
+  const secondsAgo = (Date.now() - timestamp) / 1000
+  if (secondsAgo < 60){
+    return 'Less than a minute ago'
+  }
+  const minutes = Math.floor(secondsAgo/60)
+  if (minutes == 1){
+    return '1 minute ago'
+  }
+  return `${minutes} minutes ago`
+}
+```
+
+<details>
+<summary>🚨 Løsningsforslag</summary>
+
+
+
+```js
+
+  /* I addComment() */
+  // Sette et interval for å oppdatere timestamp hvert minutt
+  setInterval(updateAndSetTimestamp, 6000, commentId)
+
+  // Kjør funksjonen for å legge til timestamp første gang
+  updateAndSetTimestamp(commentId)
+
+
+
+function updateAndSetTimestamp(commentId){
+  //Lage timestamp-paragraf, legge på klassenavn 
+  const timestamp = document.createElement("p")
+  timestamp.setAttribute("class", "timestamp") 
+  
+  // Få tak i commentbox og det gamle timestamp elementet
+  const commentBox = document.getElementById(commentId)
+  const oldTimestamp = commentBox.getElementsByClassName('timestamp')[0]
+  
+  // Bruke det globale objektet og "omregningsfunksjonen" for å finne ut hvor lenge siden en kommentar ble lagret
+  const timeAgo = howLongAgo(commentTimestamp[commentId])
+  timestamp.appendChild(document.createTextNode(timeAgo))
+
+  // Hvis det er et timestamp fra før, fjern det
+  if (oldTimestamp) {
+    commentBox.removeChild(oldTimestamp)
+  }
+  // Legg til det nye timestampet
+  commentBox.appendChild(timestamp)
+}
+
+```
+</details>
 
 ## 5) Bygg opp HTML fra JavaScript
 
@@ -718,10 +817,14 @@ seksjonsElement.appendChild(post);
 
 ### 5c) Vis alle bildene
 
+🏆 Nå skal vi vise frem alle bildene
+
+💡 Du kan bruke `map` og `forEach` for å gå gjennom alle bildene 
+
 <details>
 <summary>🚨 Løsningsforslag</summary>
 
-.....Litt tekst her, kanskje...
+Vi lager først en funksjon for å lage og legge til ett bilde. Deretter iterer vi gjennom hver post og hvert bilde for å generere disse.
 
 ```js
 const posts = [...]
@@ -748,9 +851,11 @@ posts.map(lagPostContent).forEach((postAsDomElement) => {
 
 </details>
 
-### 5d) Vis author
+### 5d) Vis med metadata
 
-### 5e) Vis med metadata
+🏆 Utvid `lagPostContent`til å vise metadata for hvert bilde
+
+💡 Dette er ikke så "pent" å gjøre med ren JavaScript, så vær forberedt på at det kan bli litt rotete
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
