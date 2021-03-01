@@ -411,7 +411,8 @@ Fjern alerten og legg til counter på klikk
 
 <!-- Oppgavetekst her -->
 
-Gratulerer! Du har nå likt bilde. Men det ser ikke ut som om antall likes oppdateres 🤔? Det kan vi gjøre noe med. Istedenfor å trigge en alert, så kan vi få klikke til å oppdatere en teller som holder styr på antall likes bildet har fått.
+Gratulerer! Du kan nå like et bilde. Men det ser ikke ut til at antall likes oppdateres? 🤔 Det kan vi gjøre noe med!
+Istedenfor å trigge en alert så kan vi oppdatere en teller som holder styr på antall likes bildet har fått når vi klikker på knappen.
 
 ## Med `onclick`-handler 🕹
 
@@ -465,11 +466,11 @@ Gratulerer! Du har nå likt bilde. Men det ser ikke ut som om antall likes oppda
 
 ## 4) Kommentere et bilde
 
-Nå har du klart å like et bilde, men innimellom er noe så bra at vi bare må kommentere. Så derfor skal vi nå legge på funksjonalitet som gjør at du kan fortelle verden hva du tenker om bildene. I HTML/CSS oppgavene laget vi "skallet" til kommentarboksene, dette skal vi gjennbruke nå.
+Nå har du klart å like et bilde, men innimellom er noe så bra at vi også har lyst til å legge igjen en kommentar. Derfor skal vi nå legge på funksjonalitet som gjør at du kan fortelle verden hva du tenker om bildene i feeden. I HTML- og CSS-oppgavene laget vi "skallet" til kommentarboksene, og dette skal vi gjenbruke nå.
 
 ## 4a) Få tak i seksjonen med kommentarer
 
-Vi begynner med å bygge skjellete, før vi legger til mer og mer etter hvert. Først skal vi hente ut seksjonen med kommentarer, så opprette en ny HTML-artikkel og til slutt legge det nye elementet på seksjonen med kommentarer. For å bryte det ned kan vi begynne med å ta en titt på HTML syntaksen.
+Vi begynner med å bygge et skjelett, før vi legger til mer og mer funksjonalitet etter hvert. Først skal vi hente ut seksjonen med kommentarer, så opprette en ny HTML-artikkel og til slutt legge det nye elementet på seksjonen med kommentarer. For å bryte det ned kan vi begynne med å ta en titt på HTML-syntaksen.
 
 ```html
 <section class="comments">
@@ -487,7 +488,11 @@ Vi begynner med å bygge skjellete, før vi legger til mer og mer etter hvert. F
 </form>
 ```
 
-Det vi nå ser på er oppbygningen av kommentarseksjonen. Vi vet nå at en kommentar ligger under taggen `<article>`, som inneholder tre `<p>`-tags med informasjon. Og at alle kommentarene ligger under `<section>`-tagen. Så først må vi "få tak i" denne seksjonen før vi kan modifisere den ved å legge til flere kommentarer. Vi har og allerede tatt oss den friheten og legge til `addComment()` funksjonen på knappen. Slik at det er knappen som lager en ny kommentar.
+Det vi ser på her er oppbygningen av kommentarseksjonen. Vi vet nå at en kommentar ligger under taggen `<article>`, som inneholder tre `<p>`-tags med informasjon. Og at alle kommentarene ligger under `<section>`-taggen.
+
+For å komme i gang må vi først få tak i denne seksjonen før vi kan modifisere den ved å legge til flere kommentarer.
+
+🤓 Vi har allerede tatt oss friheten til å legge til `addComment()`-funksjonen på knappen vår slik at det er knappen som lager en ny kommentar når vi klikker på den.
 
 🏆 Hent ut `<section>`
 
@@ -507,7 +512,7 @@ function addComment() {
 
 ## 4b) Lag en ny kommentarboks
 
-Før vi kan legge til kommentaren til seksjonen vi nettopp hentet ut, er vi nødt til å opprettet et HTML-element `<article>`.
+Før vi kan legge til kommentaren til seksjonen vi nettopp hentet ut er vi nødt til å opprettet et HTML-element, `<article>`.
 
 🏆 Lag en `<article>`-tag
 
@@ -525,14 +530,15 @@ function addComment() {
 
 </details>
 
-Supert, nå har du laget et nytt element. Men, vi ser det ikke på siden 🤔 Hvordan kan vi vite at det faktisk eksisterer? Først må vi sørge for at kommentaren legger seg under seksjonen vi hentet ut tidligere. Dette kan virke litt vanskelig, men vi skal få det til. Siden `<section>` inneholder en liste med andre tag's må vi spesifisere at vi ønsker å legge til kommentaren i det første elementet under `<section>`.
-Vi kan da skrive `commentSection[0]` for å spesifisere dette. Videre må vi legge til `<article>`-tagen på denne seksjonen.
+Supert, nå har du laget et nytt element! Men, vi ser det enda ikke på siden 🤔 Hvordan kan vi vite at det faktisk eksisterer?
+
+Først må vi sørge for at kommentaren legger seg under seksjonen vi hentet ut tidligere. Dette kan virke litt vanskelig, men vi skal få det til. Siden `<section>` inneholder en liste med andre tags må vi spesifisere at vi ønsker å legge til kommentaren i det første elementet under `<section>`. Vi kan da skrive `commentSection[0]` for å spesifisere dette. Videre må vi legge til `<article>`-tagen på denne seksjonen.
 
 🏆 Legg til `<article>`-tagen på `<section>`
 
 💡 Vi kan bruke `appendChild("taggen man skal legge til") for å gjøre dette
 
-Nå skal noe skje, men for å se det må vi åpne utviklerverktøyet og finne `<section>` med kommentarer. Dukker det opp noe når du trykker på post?
+Nå skal noe skje, men for å se det må vi åpne utviklerverktøyet (DevTools) og finne `<section>` med kommentarer. Dukker det opp noe når du trykker på post?
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -552,11 +558,11 @@ function addComment() {
 
 Nå har du en artikkel-tag klar for kommentarer. Det vi må gjøre nå før vi fyller den med informasjon, er å gi den samme styling som de andre kommentarene sånn at vi kan se den uten å bruke utviklerverktøy.
 
-I koden vår, før vi bruker `appendChild()` ønsker vi nå å sette attributter på artikkel-taggen. Disse attributtene skal være en klasse som har samme css styling som de andre.
+I koden vår, før vi bruker `appendChild()`, ønsker vi å sette attributter på artikkel-taggen. Disse attributtene skal være en klasse som har samme CSS-styling som de andre.
 
 🏆 Legg til CSS klassen `comment` på artikkel-taggen.
 
-💡 For å sette styling kan vi bruke `setAttribute()` som tar inn to paramtere. Ett er hvilket attribut du vil sette, og det andre er hva det heter.
+💡 For å sette styling kan vi bruke `setAttribute()` som tar inn to parametere. Ett er hvilken type attributt du vil sette, og det andre er hva attributtet heter.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -580,9 +586,9 @@ Nå skal vi kunne se en grå boks dukke opp når vi trykker på post.
 
 ## 4c) Legg til kommentar
 
-Det er ikke like gøy å poste bare tomme kommentarfelter. Så nå skal vi hente ut kommentaren fra inputfeltet og printe den ut i kommentarboksen.
+Det er ikke like gøy å poste bare tomme kommentarer, derfor skal vi nå hente ut kommentaren fra inputfeltet og printe den ut i kommentarboksen.
 
-Da vi tittet på HTML oppsettet tidligere så vi at all dataen vi viste frem i kommentaren var lagt inn i `<p>`-tagger. Så for å vise kommentaren må vi opprette en slik tag.
+Da vi tittet på HTML-oppsettet tidligere så vi at all dataen vi viste frem i kommentaren var lagt inn i `<p>`-tagger. For å vise kommentaren må vi derfor opprette enda en slik tag.
 
 🏆 Lag en `<p>`-tag og sett CSS-klassen
 
@@ -644,7 +650,7 @@ Prøv det ut og se om kommentaren din dukker opp.
 
 ## 4d) Legg til brukernavn og tidstempel
 
-Nå er vi nesten i mål. Det vi ønsker å vise frem nå er hvem som har skrevet kommentaren og når den ble postet.
+Nå er vi nesten i mål. Det siste vi ønsker å vise frem nå er hvem som har skrevet kommentaren og når den ble postet.
 
 Timestamp; egen oppgave mtp. new Date(...).toLocalDateString(...)
 Author og description
