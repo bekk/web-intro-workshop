@@ -621,6 +621,7 @@ var inputText = document.getElementById("comment").value;
 Så ønsker vi å legge verdien til kommentaren inn i `p`-taggen.
 
 🏆 Legg til `inputText` i `<p>`-taggen og legg `p`-taggen under artikkel-elementet.
+
 💡 For å legge til tekst i et element kan vi bruke `document.createTextNode("inputText")`
 
 <details>
