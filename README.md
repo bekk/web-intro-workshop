@@ -410,13 +410,12 @@ knapp.addEventListener("click", () => {
 Gratulerer! Du kan nå like et bilde. Men det ser ikke ut til at antall likes oppdateres? 🤔 Det kan vi gjøre noe med!
 Istedenfor å trigge en alert så kan vi oppdatere en teller som holder styr på antall likes bildet har fått når vi klikker på knappen.
 
-🏆 Skriv om slik at knappen viser antall likes, og trykk på knappen legger til likes.
-
+🏆 Skriv om slik at knappen viser antall likes og slik at et trykk på knappen legger til flere likes.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
 
-Vi må endre funksjonen som kjøres når vi trykker på knappen, slik at den leser ut den gamle verdien, legger til en like og deretter setter denne verdien tilbake i knappen. Dette gjør vi ved å bruker
+Vi må endre funksjonen som kjøres når vi trykker på knappen slik at den leser ut den gamle verdien, legger til en like og deretter setter denne verdien tilbake i knappen. Dette gjør vi ved å bruke `innerHTML`.
 
 ```js
   const likeButton = document.getElementById("like-button-1");
@@ -428,19 +427,34 @@ Vi må endre funksjonen som kjøres når vi trykker på knappen, slik at den les
 ```
 </details>
 
-<!-- 
-**NB!** Bekkstagram-feeden vår kan inneholde mange like-knapper og da er det viktig at hver av de har sin unike id for å få tak i disse.
+### 3d) Flere likes-knapper
+Sånn det er nå fungerer jo kun den ene knappen. Her har vi hardkodet hvilken 👍-boks som skal sjekkes og oppdateres. En litt penere måte å gjøre dette på er å sende inn hvilken 👍-boks vi skal oppdatere. Dette kan vi gjøre ved å kalle funksjonen fra HTMLen.
 
-### Todo ✅
+🏆 Skriv om slik at knappen kaller funksjonen ved bruk av `onclick`, og sender `id`-en til `likeSpan` som argument i en funksjon som oppdaterer like-telleren.
 
-Gjør todo hvis tid
+<details>
+<summary>🚨 Løsningsforslag</summary>
 
-- Utvide til å kunne trykke knappene uavhengige av hverandre og de endrer hver sin counter (løse id-problematikk)
--->
+Her bruker vi `onclick` for å kalle funksjonen rett fra HTMLen, hvor vi enkelt kan sende inn den rette `id`-en.
+
+```html
+  <button id="like-button-1" class="like-button" onclick="like('like-value-1')">
+    <span role="img" aria-label="Lik bildet">👍</span>
+  </button>
+```
+
+```js
+  function like (likeId){
+    likeSpan = document.getElementById(likeId);
+    likeSpan.innerHTML = Number(likeSpan.innerHTML) + 1;
+  };
+```
+</details>
 
 📚 [Les mer om hendelser i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/07-dom-apiet#hendelser)
 
 📚 [Les mer om JavaScript-funksjoner i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/04-funksjoner)
+
 
 ## 4) Kommentere et bilde
 

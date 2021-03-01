@@ -4,10 +4,7 @@
 //   alert("I like it! #like4like #l4l");
 // });
 
-let counter = 0;
-function like() {
-  counter += 1;
-  alert("I like it! #like4like #l4l");
-  const likeParagraph = document.getElementsByClassName("like-paragraph")[0];
-  likeParagraph.innerText = counter + " likes";
-}
+function like (likeId){
+  likeSpan = document.getElementById(likeId);
+  likeSpan.innerHTML = Number(likeSpan.innerHTML) + 1;
+};
