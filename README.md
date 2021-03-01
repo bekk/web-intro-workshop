@@ -201,11 +201,13 @@ Vi skal legge til HTML-elementer for dette, slik at vi har komponentene klare n�
 - For å kunne kommentere på et bilde trenger vi et tekstfelt hvor brukeren kan skrive inn kommentar, i tillegg til en knapp slik at brukeren kan lagre kommentaren sin.
 
 🏆 Sett inn en knapp under beskrivelsen av bildet ditt. Knappen skal ha en 👍-emoji på seg.
+
 💡 Vi ønsker på et senere tidspunkt kunne se hvor mange likes et bilde har fått, så det kan være nyttig å legge knappen inn i en egen HTML-bolk med f.eks `<section>`
 
 🏆 Lag en midlertidig seksjon for å vise tidligere kommentarer. Vi skal legge til funksjonaliteten senere, så får nå kan du legge inn midlertidig tekst i denne seskjonen.
 
 🏆 Lag et felt hvor brukeren kan skrive inn en kommentar, og en knapp slik at brukeren kan lagre kommentaren. Vi skal kun legge inn komponentene i første omgang, funksjonaliteten legger vi på senere.
+
 💡 Tekstfeltet og knappen er knyttet sammen, og bør grupperes på et vis. Funksjonaliteten er veldig likt et skjema. Finnes det noen HTML-komponenter for dette?
 
 <details><summary>🚨 Løsningsforslag</summary>
@@ -528,7 +530,7 @@ Først må vi sørge for at kommentaren legger seg under seksjonen vi hentet ut 
 
 🏆 Legg til `<article>`-tagen på `<section>`
 
-💡 Vi kan bruke `appendChild("taggen man skal legge til") for å gjøre dette
+💡 Vi kan bruke `appendChild()` for å legge til en ny node.
 
 Nå skal noe skje, men for å se det må vi åpne utviklerverktøyet (DevTools) og finne `<section>` med kommentarer. Dukker det opp noe når du trykker på post?
 
@@ -622,7 +624,7 @@ Så ønsker vi å legge verdien til kommentaren inn i `p`-taggen.
 
 🏆 Legg til `inputText` i `<p>`-taggen og legg `p`-taggen under artikkel-elementet.
 
-💡 For å legge til tekst i et element kan vi bruke `document.createTextNode("inputText")`
+💡 For å legge til tekst i et element kan vi bruke `document.createTextNode()`
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -767,7 +769,7 @@ I løpet av de neste oppgavene skal vi erstatte innholdet med dynamiske data ved
 
 💡 For å lage et HTML-element fra JavaScript kan vi bruke `createElement`-funksjonen.
 
-💡 Du kan bruke metoden `appendChild` for å legge til en tagg under andre tagger i koden.
+💡 Du kan bruke metoden `appendChild()` for å legge til en tagg under andre tagger i koden.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -929,7 +931,7 @@ For å få til dette må vi knytte sammen CSS-stylingen og JavaScript-funksjonal
 }
 ```
 
-Neste steg er å legge til og fjerne denne stylingen når en bruker klikker på teksten. Da vi lagde funksjonalitet på like-knappen brukte vi `addEventListener` for å lytte etter handlingen `click` fra brukeren. Da la vi på en alert når man trykket på knappen, men denne gangen skal vi bruke `classList.toggle()` for å toggle css-klassen av og på. Siden toggle er en funksjon må vi sende inn CSS-klassen som en variabel.
+Neste steg er å legge til og fjerne denne stylingen når en bruker klikker på teksten. Da vi lagde funksjonalitet på like-knappen brukte vi `addEventListener()` for å lytte etter handlingen `click` fra brukeren. Da la vi på en alert når man trykket på knappen, men denne gangen skal vi bruke `classList.toggle()` for å toggle css-klassen av og på. Siden toggle er en funksjon må vi sende inn CSS-klassen som en variabel.
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
