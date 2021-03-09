@@ -100,13 +100,20 @@ For eksempel: `<p id="avsnitt">Hei</p>` vil refereres til med følgende CSS-rege
 
 🏆 Lag en ny fil som heter index.css. Denne skal du bruke for å style siden din. Med CSS, sett overskriften din til midten av siden, med `text-align` i CSS, og gjør teksten rød.
 
-💡 Eksterne filer med CSS kode kan du legge inne i `<style>` tags, som du plasserer innenfor `<head>` seksjonen av siden din. Du kan refere til filen på tilsvarende måte som du la inn bildet ditt i en tidligere oppgave.
+💡 Du kan skrive CSS direkte inn i HTML med `<style>`-taggen, men dette blir fort rotete, og derfor skriver vi som oftest CSS-koden i en egen fil. For at koden skal gjelde for nettsiden din må filen refereres fra `<head>`-taggen i HTML på følgende måte:
+
+```html
+<head>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+```
 
 💡 Les på [MDN-artikkelen](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) om `text-align`.
 
 <details><summary>🚨 Løsningsforslag</summary>
 
 ```css
+/* index.css */
 .overskrift {
   text-align: center;
   color: red;
