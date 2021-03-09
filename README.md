@@ -98,9 +98,9 @@ For eksempel: `<p id="avsnitt">Hei</p>` vil refereres til med følgende CSS-rege
 
 📚 Se også [oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-2) for mer informasjon om selectorer, pseudo-klasser og box-model .
 
-🏆 Lag en ny fil som heter index.css. Denne skal du bruke for å style siden din. Med CSS, sett overskriften din til midten av siden, med `text-align` i CSS, og gjør teksten rød.
+🏆 Lag en ny fil `index.css`, eller bruk den som ligger i `src`-mappen fra før. Sett inn en referanse til CSS-filen fra `index.html` slik at du kan bruke denne til å style siden din. Med CSS, midtstill overskriften din og gjør teksten rød.
 
-💡 Du kan skrive CSS direkte inn i HTML med `<style>`-taggen, men dette blir fort rotete, og derfor skriver vi som oftest CSS-koden i en egen fil. For at koden skal gjelde for nettsiden din må filen refereres fra `<head>`-taggen i HTML på følgende måte:
+💡 Du _kan_ skrive CSS direkte inn i HTML med `<style>`-taggen, men dette blir fort rotete, og derfor skriver vi som oftest CSS-koden i en egen fil. For at koden skal gjelde for nettsiden din må filen refereres fra `<head>`-taggen i HTML på følgende måte:
 
 ```html
 <head>
@@ -170,7 +170,7 @@ main {
 }
 ```
 
-Ved å sette bredden på bildet til å være 100 % passer man på at det ikke blir for stort.
+Ved å sette bredden på bildet til å være `100%` passer man på at det ikke blir for stort.
 
 ```css
 .image {
