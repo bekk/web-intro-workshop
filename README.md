@@ -35,10 +35,10 @@ Vi har `<p>` for å definere avsnitt, `<h1>` for overskrifter (og `<h2>`, `<h3>`
 
 🏆 Lag en overskrift som sier "Hello world!"
 
-💡 Du kan skrive koden inn i `<body>` elementet i den inkluderte filen.
+💡 Du kan skrive koden inn i `<body>`-elementet i den inkluderte filen.
 
 <details><summary>🚨 Løsningsforslag</summary>
-Body elementet ditt skal se sånn ut:
+Body-elementet ditt skal se sånn ut:
 
 ```html
 <body>
@@ -78,7 +78,7 @@ CSS er verktøyet vi bruker for å gi HTML det utseendet vi ønsker. Hvor ting s
 
 > Litt på siden, så er CSS en norsk oppfinnelse 💪
 
-Man kan sette styling direkte på et HTML element, men den vanligste måten å style på er å ha CSS koden i en egen fil.
+Man kan sette styling direkte på et HTML-element, men den vanligste måten å style på er å ha CSS-koden i en egen fil.
 
 HTML-elementer har ofte et `class`-attributt, som kan deles av flere elementer. De kan også ha et `id`-attributt, som er unik per element. CSS bruker `class`-attributt og `id`-attributt for å referere til elementer.
 
@@ -198,7 +198,7 @@ Ved å sette bredden på bildet til å være `100%` passer man på at det ikke b
 }
 ```
 
-🤓 Hvis flere CSS-regler har samme innhold kan man slå de sammen med å bruke kommma før styling-innholdet!
+🤓 Hvis flere CSS-regler har samme innhold kan man slå de sammen ved å bruke komma før styling-innholdet!
 
 </details>
 
@@ -213,13 +213,13 @@ Vi skal legge til HTML-elementer for dette, slik at vi har komponentene klare n�
 
 🏆 Sett inn en knapp under beskrivelsen av bildet ditt. Knappen skal ha en 👍-emoji på seg.
 
-💡 Vi ønsker på et senere tidspunkt kunne se hvor mange likes et bilde har fått, så det kan være nyttig å legge knappen inn i en egen HTML-bolk med f.eks `<section>`
+💡 Vi ønsker på et senere tidspunkt kunne se hvor mange likes et bilde har fått så det kan være nyttig å legge knappen inn i en egen HTML-bolk med f.eks `<section>`
 
-🏆 Lag en midlertidig seksjon for å vise tidligere kommentarer. Vi skal legge til funksjonaliteten senere, så får nå kan du legge inn midlertidig tekst i denne seskjonen.
+🏆 Lag en midlertidig seksjon for å vise tidligere kommentarer. Vi skal legge til funksjonaliteten senere så for nå kan du legge inn midlertidig tekst i denne seskjonen.
 
-🏆 Lag et felt hvor brukeren kan skrive inn en kommentar, og en knapp slik at brukeren kan lagre kommentaren. Vi skal kun legge inn komponentene i første omgang, funksjonaliteten legger vi på senere.
+🏆 Lag et felt hvor brukeren kan skrive inn en kommentar og en knapp slik at brukeren kan lagre kommentaren. Vi skal kun legge inn komponentene i første omgang, funksjonaliteten legger vi på senere.
 
-💡 Tekstfeltet og knappen er knyttet sammen, og bør grupperes på et vis. Funksjonaliteten er veldig likt et skjema. Finnes det noen HTML-komponenter for dette?
+💡 Tekstfeltet og knappen er knyttet sammen og bør grupperes på et vis. Funksjonaliteten er veldig likt et skjema. Finnes det noen HTML-komponenter for dette?
 
 <details><summary>🚨 Løsningsforslag</summary>
 
