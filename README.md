@@ -28,7 +28,7 @@ Lag en "komme i gang"-seksjon her! Tilbakemelding fra tidligere:
 HTML-dokumenter inneholder en rekke elementer som enten er self-closing (altså lukker seg selv) eller som har underelementer, ofte referert til som children.
 
 Et element defineres med en _tag_. En tag ser slik ut `<tag>`. En tag markerer starten eller slutten på elementet, med innholdet i midten: `<tag> innhold </tag>`
-Eventuelt er tagen self-closing: `<tag/>`
+Eventuelt er tagen self-closing: `<tag />`
 
 Det fins mange forkskjellige tags som har som oppgave å få siden til å se ut som man vil.
 
