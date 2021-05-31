@@ -16,6 +16,11 @@ Du kommer til å se noen emojis i oppgavene 🤩 De betyr det her:
 - 🚨 Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
 - 🤓 Fun facts: Ekstrainfo for de spesielt interesserte
 
+# TODO
+Lag en "komme i gang"-seksjon her! Tilbakemelding fra tidligere:
+
+"En ting som kunne vært nyttig er en sånn "komme i gang" seksjon der det står at man må klone repoet, åpne index.html i en nettleser og hvilken fil oppgavene skal løses i. Jeg fikk først for meg at de kanskje skulle løses inne i oppgaver mappen et sted "
+
 # HTML og CSS
 
 ## Header-elementer
@@ -1048,3 +1053,7 @@ Eller 2) direkte i button-taggen sin "onclick" funksjon:
 ```
 
 </details>
+
+# TODO
+Skriv litt om react-ws og link til den her
+
