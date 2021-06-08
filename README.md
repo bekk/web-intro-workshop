@@ -17,9 +17,14 @@ Du kommer til å se noen emojis i oppgavene 🤩 De betyr det her:
 - 🤓 Fun facts: Ekstrainfo for de spesielt interesserte
 
 # TODO
+
 Lag en "komme i gang"-seksjon her! Tilbakemelding fra tidligere:
 
 "En ting som kunne vært nyttig er en sånn "komme i gang" seksjon der det står at man må klone repoet, åpne index.html i en nettleser og hvilken fil oppgavene skal løses i. Jeg fikk først for meg at de kanskje skulle løses inne i oppgaver mappen et sted "
+
+## Mappestruktur
+
+I dette repoet finner du to mapper: `src` og `løsningsforslag`. Mappen src kan du bruke som når du jobber med oppgavene, du kan endre filene som allerede finnes her eller opprette dine egne. I src finner du også en mappe som heter images, hvor du finner bilder som kan brukes i Bekkstagram.
 
 # HTML og CSS
 
@@ -431,16 +436,18 @@ Istedenfor å trigge en alert så kan vi oppdatere en teller som holder styr på
 Vi må endre funksjonen som kjøres når vi trykker på knappen slik at den leser ut den gamle verdien, legger til en like og deretter setter denne verdien tilbake i knappen. Dette gjør vi ved å bruke `innerHTML`.
 
 ```js
-  const likeButton = document.getElementById("like-button-1");
+const likeButton = document.getElementById("like-button-1");
 
-  likeButton.addEventListener("click", () => {
-    likeSpan = document.getElementById("like-value-1");
-    likeSpan.innerHTML = Number(likeSpan.innerHTML) + 1;
-  });
+likeButton.addEventListener("click", () => {
+  likeSpan = document.getElementById("like-value-1");
+  likeSpan.innerHTML = Number(likeSpan.innerHTML) + 1;
+});
 ```
+
 </details>
 
 ### 3d) Flere likes-knapper
+
 Sånn det er nå fungerer jo kun den ene knappen. Her har vi hardkodet hvilken 👍-boks som skal sjekkes og oppdateres. En litt penere måte å gjøre dette på er å sende inn hvilken 👍-boks vi skal oppdatere. Dette kan vi gjøre ved å kalle funksjonen fra HTMLen.
 
 🏆 Skriv om slik at knappen kaller funksjonen ved bruk av `onclick`, og sender `id`-en til `likeSpan` som argument i en funksjon som oppdaterer like-telleren.
@@ -451,23 +458,23 @@ Sånn det er nå fungerer jo kun den ene knappen. Her har vi hardkodet hvilken �
 Her bruker vi `onclick` for å kalle funksjonen rett fra HTMLen, hvor vi enkelt kan sende inn den rette `id`-en.
 
 ```html
-  <button id="like-button-1" class="like-button" onclick="like('like-value-1')">
-    <span role="img" aria-label="Lik bildet">👍</span>
-  </button>
+<button id="like-button-1" class="like-button" onclick="like('like-value-1')">
+  <span role="img" aria-label="Lik bildet">👍</span>
+</button>
 ```
 
 ```js
-  function like (likeId){
-    likeSpan = document.getElementById(likeId);
-    likeSpan.innerHTML = Number(likeSpan.innerHTML) + 1;
-  };
+function like(likeId) {
+  likeSpan = document.getElementById(likeId);
+  likeSpan.innerHTML = Number(likeSpan.innerHTML) + 1;
+}
 ```
+
 </details>
 
 📚 [Les mer om hendelser i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/07-dom-apiet#hendelser)
 
 📚 [Les mer om JavaScript-funksjoner i oppslagsverket](https://bekk.gitbook.io/web-intro/grunnleggende-webutvikling/cover-3/04-funksjoner)
-
 
 ## 4) Kommentere et bilde
 
@@ -665,16 +672,18 @@ Nå er vi nesten i mål. Det siste vi ønsker å vise frem er når en kommentar 
 
 Dette gjør vi ved å lage en **global** teller og bruke `setAttribute` funksjonen
 i `addComment`-funksjonen. Husk å oppdatere telleren etter bruk!
+
 ```js
-  let commentCount = 0
+let commentCount = 0;
 
-  // Generere og sette en ID for kommentaren
-  const commentId = `comment-${commentCount}`
-  commentBox.setAttribute("id", commentId)
+// Generere og sette en ID for kommentaren
+const commentId = `comment-${commentCount}`;
+commentBox.setAttribute("id", commentId);
 
-  // Oppdatere antall kommentarer
-  commentCount += 1
+// Oppdatere antall kommentarer
+commentCount += 1;
 ```
+
 </details>
 
 🏆 Lag et globalt objekt hvor vi skal lagre timestamps knyttet til den unike ID'en.
@@ -688,13 +697,14 @@ i `addComment`-funksjonen. Husk å oppdatere telleren etter bruk!
 Her lagrer vi timestamp sammen med en kommentarID
 
 ```js
-  /* Utenfor addComment() */
-  const commentTimestamp = {}
-  
-  /* I addComment() */
-  // Lagre timestamp i global dictionary
-  commentTimestamp[commentId] = Date.now()
+/* Utenfor addComment() */
+const commentTimestamp = {};
+
+/* I addComment() */
+// Lagre timestamp i global dictionary
+commentTimestamp[commentId] = Date.now();
 ```
+
 </details>
 
 🏆 Lag en funksjon for å oppdatere timestamp knyttet til en kommentarID
@@ -705,59 +715,53 @@ Her lagrer vi timestamp sammen med en kommentarID
 
 💡 Du kan bruke funksjonen `howLongAgo` for å regne ut hvor lang tid det er siden en kommentar ble publisert.
 
-
 ```js
-function howLongAgo (timestamp) {
-  const secondsAgo = (Date.now() - timestamp) / 1000
-  if (secondsAgo < 60){
-    return 'Less than a minute ago'
+function howLongAgo(timestamp) {
+  const secondsAgo = (Date.now() - timestamp) / 1000;
+  if (secondsAgo < 60) {
+    return "Less than a minute ago";
   }
-  const minutes = Math.floor(secondsAgo/60)
-  if (minutes == 1){
-    return '1 minute ago'
+  const minutes = Math.floor(secondsAgo / 60);
+  if (minutes == 1) {
+    return "1 minute ago";
   }
-  return `${minutes} minutes ago`
+  return `${minutes} minutes ago`;
 }
 ```
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
 
-
-
 ```js
+/* I addComment() */
+// Sette et interval for å oppdatere timestamp hvert minutt
+setInterval(updateAndSetTimestamp, 6000, commentId);
 
-  /* I addComment() */
-  // Sette et interval for å oppdatere timestamp hvert minutt
-  setInterval(updateAndSetTimestamp, 6000, commentId)
+// Kjør funksjonen for å legge til timestamp første gang
+updateAndSetTimestamp(commentId);
 
-  // Kjør funksjonen for å legge til timestamp første gang
-  updateAndSetTimestamp(commentId)
+function updateAndSetTimestamp(commentId) {
+  //Lage timestamp-paragraf, legge på klassenavn
+  const timestamp = document.createElement("p");
+  timestamp.setAttribute("class", "timestamp");
 
-
-
-function updateAndSetTimestamp(commentId){
-  //Lage timestamp-paragraf, legge på klassenavn 
-  const timestamp = document.createElement("p")
-  timestamp.setAttribute("class", "timestamp") 
-  
   // Få tak i commentbox og det gamle timestamp elementet
-  const commentBox = document.getElementById(commentId)
-  const oldTimestamp = commentBox.getElementsByClassName('timestamp')[0]
-  
+  const commentBox = document.getElementById(commentId);
+  const oldTimestamp = commentBox.getElementsByClassName("timestamp")[0];
+
   // Bruke det globale objektet og "omregningsfunksjonen" for å finne ut hvor lenge siden en kommentar ble lagret
-  const timeAgo = howLongAgo(commentTimestamp[commentId])
-  timestamp.appendChild(document.createTextNode(timeAgo))
+  const timeAgo = howLongAgo(commentTimestamp[commentId]);
+  timestamp.appendChild(document.createTextNode(timeAgo));
 
   // Hvis det er et timestamp fra før, fjern det
   if (oldTimestamp) {
-    commentBox.removeChild(oldTimestamp)
+    commentBox.removeChild(oldTimestamp);
   }
   // Legg til det nye timestampet
-  commentBox.appendChild(timestamp)
+  commentBox.appendChild(timestamp);
 }
-
 ```
+
 </details>
 
 ## 5) Bygg opp HTML fra JavaScript
@@ -825,7 +829,7 @@ seksjonsElement.appendChild(post);
 
 🏆 Nå skal vi vise frem alle bildene
 
-💡 Du kan bruke `map` og `forEach` for å gå gjennom alle bildene 
+💡 Du kan bruke `map` og `forEach` for å gå gjennom alle bildene
 
 <details>
 <summary>🚨 Løsningsforslag</summary>
@@ -1054,5 +1058,5 @@ Eller 2) direkte i button-taggen sin "onclick" funksjon:
 </details>
 
 # TODO
-Skriv litt om react-ws og link til den her
 
+Skriv litt om react-ws og link til den her

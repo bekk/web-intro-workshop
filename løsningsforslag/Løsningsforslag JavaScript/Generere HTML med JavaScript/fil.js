@@ -5,7 +5,7 @@ const DAY = 1000 * 60 * 60 * 24;
 // { id: 1, path: 'http://url.com', description: 'tekst til posten', alt: 'alt-tekst' }
 const posts = [{
     id: '1',
-    path: './img/working.jpeg',
+    path: '../../../src/img/working.jpeg',
     description: 'God trøkk på jobb i dag 😎',
     alt: 'Fem personer som jobber sammen rundt et bord',
     createdDate: new Date() - DAY * 2,
@@ -14,7 +14,7 @@ const posts = [{
   },
   {
     id: '2',
-    path: './img/sunset.jpeg',
+    path: '../../../src/img/sunset.jpeg',
     description: 'Koser meg med litt kveldsjobbing når ungene endelig er i seng',
     alt: 'En mann som arbeider på pc i solnedgang',
     createdDate: new Date() - DAY * 3,
@@ -23,7 +23,7 @@ const posts = [{
   },
   {
     id: '3',
-    path: './img/suitcase.jpeg',
+    path: '../../../src/img/suitcase.jpeg',
     description: 'På vei til møte med ny, spennende kunde 🤩',
     alt: 'Mann med stresskoffert som går',
     createdDate: new Date() - DAY * 4,
@@ -32,7 +32,7 @@ const posts = [{
   },
   {
     id: '4',
-    path: './img/writing.jpeg',
+    path: '../../../src/img/writing.jpeg',
     description: 'Ny artikkel om frontend på vei! 💪',
     alt: 'Hands writing on a computer',
     createdDate: new Date() - DAY * 12,
@@ -41,7 +41,7 @@ const posts = [{
   },
   {
     id: '5',
-    path: './img/office.jpeg',
+    path: '../../../src/img/office.jpeg',
     description: 'Hjemmekontoret er på plass 😍',
     alt: 'Home office',
     createdDate: new Date() - DAY * 50,
