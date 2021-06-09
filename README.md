@@ -163,7 +163,7 @@ En post på Bekkstagram består av hvem som har lastet den opp, et bilde og en b
 
 💡 Fargen vi har brukt som bakgrunnsfarge heter `gainsboro`.
 
-<img src="./oppgaver/images/post.png" style="max-width: 500px;" alt="Screenshot of Bekkstagram post" />
+<img src="./løsningsforslag/images/post.png" style="max-width: 500px;" alt="Screenshot of Bekkstagram post" />
 
 <details><summary>🚨 Løsningsforslag</summary>
 
@@ -741,7 +741,7 @@ setInterval(updateAndSetTimestamp, 6000, commentId);
 updateAndSetTimestamp(commentId);
 
 function updateAndSetTimestamp(commentId) {
-  //Lage timestamp-paragraf, legge på klassenavn
+  // Lage timestamp-paragraf, legge på klassenavn
   const timestamp = document.createElement("p");
   timestamp.setAttribute("class", "timestamp");
 
