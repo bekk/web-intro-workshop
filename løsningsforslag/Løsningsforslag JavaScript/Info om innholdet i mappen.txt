@@ -1,0 +1,2 @@
+I denne mappen finner du ulike løsningsforslag for de mer sammensatte JavaScript deloppgavene.
+Det er det samme løsningsforslaget som er foreslått under hver oppgave i README.md, men fordelt på ulike filer.

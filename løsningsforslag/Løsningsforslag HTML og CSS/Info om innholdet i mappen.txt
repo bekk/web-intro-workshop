@@ -1,0 +1,2 @@
+I denne mappen finner du et løsningsforslag for HTML og CSS oppgavene. 
+Dette løsningsforslaget/skallet kan benyttes som et utgangspunkt dersom du ønsker å gå videre med JavaScript oppgavene, uten å gjøre ferdig HTML og CSS oppgavene først.
