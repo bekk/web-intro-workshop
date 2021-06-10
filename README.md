@@ -1059,4 +1059,4 @@ Eller 2) direkte i button-taggen sin "onclick" funksjon:
 
 # Relaterte workshops
 
-Om du ønsker å lære om det populære webrammeverket React kan du sjekke ut [React intro](https://github.com/bekk/react-intro)-workshopen der du også skal lage **Bekkstagram**, men i React! React hjelper på å gjøre oppgaver som [Oppgave 5](https://github.com/bekk/web-intro-workshop#5-bygg-opp-html-fra-javascript) litt enklere ved å bidra til å generere HTML, JavaScript og CSS flettet sammen 🤩
+Om du ønsker å lære om det populære webrammeverket React kan du sjekke ut [React intro](https://github.com/bekk/react-intro)-workshopen der du også skal lage **Bekkstagram**, men i React! React kan hjelpe til å gjøre oppgaver som [Oppgave 5](https://github.com/bekk/web-intro-workshop#5-bygg-opp-html-fra-javascript) litt enklere ved å bidra til å generere HTML, JavaScript og CSS flettet sammen 🤩
