@@ -1057,6 +1057,6 @@ Eller 2) direkte i button-taggen sin "onclick" funksjon:
 
 </details>
 
-# TODO
+# Relaterte workshops
 
-Skriv litt om react-ws og link til den her
+Om du ønsker å lære om det populære webrammeverket React kan du sjekke ut [React intro](https://github.com/bekk/react-intro)-workshopen der du også skal lage **Bekkstagram**, men i React! React hjelper på å gjøre oppgaver som [Oppgave 5](https://github.com/bekk/web-intro-workshop#5-bygg-opp-html-fra-javascript) litt enklere med å bidra i å generere HTML, JavaScript og CSS flettet sammen 🤩
