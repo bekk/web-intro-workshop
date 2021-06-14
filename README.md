@@ -22,7 +22,7 @@ Workshopen består av et sett med oppgaver som gjøres lokalt på din maskin. Du
 
 I dette repoet finner du to mapper: [`src`](./src/) og [`løsningsforslag`](./løsningsforslag/). Mappen `src` kan du bruke som når du jobber med oppgavene, du kan endre filene som allerede finnes her ([`index.html`](./src/index.html) og [`index.css`](./src/index.css)), og etterhvert opprette dine egne når du starter på JavaScript-oppgavene. I `src` finner du også en mappe som heter [`img`](./src/img/), hvor du finner bilder som kan brukes i Bekkstagram.
 
-Web-applikasjonen din starter du ved å åpne index.html i en nettleser.
+Web-applikasjonen din starter du ved å åpne [`index.html`](./src/index.html) i en nettleser.
 
 # HTML og CSS
 
