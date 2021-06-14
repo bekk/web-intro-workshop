@@ -16,15 +16,13 @@ Du kommer til å se noen emojis i oppgavene 🤩 De betyr det her:
 - 🚨 Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
 - 🤓 Fun facts: Ekstrainfo for de spesielt interesserte
 
-# TODO
+# Hvordan komme igang
 
-Lag en "komme i gang"-seksjon her! Tilbakemelding fra tidligere:
+Workshopen består av et sett med oppgaver som gjøres lokalt på din maskin. Du laster ned ressursene ved å trykke på den grønne knappen `Code` i menylinjen over mappestrukturen, eller ved å klone repo. Dette kan du gjøre ved å åpne terminalen din og laste ned med `git clone git@github.com:bekk/web-intro-workshop.git`.
 
-"En ting som kunne vært nyttig er en sånn "komme i gang" seksjon der det står at man må klone repoet, åpne index.html i en nettleser og hvilken fil oppgavene skal løses i. Jeg fikk først for meg at de kanskje skulle løses inne i oppgaver mappen et sted "
+I dette repoet finner du to mapper: `src` og `løsningsforslag`. Mappen src kan du bruke som når du jobber med oppgavene, du kan endre filene som allerede finnes her (index.html og index.css), og etterhvert opprette dine egne når du starter på JavaScript-oppgavene. I src finner du også en mappe som heter images, hvor du finner bilder som kan brukes i Bekkstagram.
 
-## Mappestruktur
-
-I dette repoet finner du to mapper: `src` og `løsningsforslag`. Mappen src kan du bruke som når du jobber med oppgavene, du kan endre filene som allerede finnes her eller opprette dine egne. I src finner du også en mappe som heter images, hvor du finner bilder som kan brukes i Bekkstagram.
+Web-applikasjonen din starter du ved å åpne index.html i en nettleser.
 
 # HTML og CSS
 
