@@ -20,7 +20,7 @@ Du kommer til å se noen emojis i oppgavene 🤩 De betyr det her:
 
 Workshopen består av et sett med oppgaver som gjøres lokalt på din maskin. Du laster ned ressursene ved å trykke på den grønne knappen `Code` i menylinjen over mappestrukturen, eller ved å klone repo. Dette kan du gjøre ved å åpne terminalen din og laste ned med `git clone git@github.com:bekk/web-intro-workshop.git`.
 
-I dette repoet finner du to mapper: `src` og `løsningsforslag`. Mappen src kan du bruke som når du jobber med oppgavene, du kan endre filene som allerede finnes her (index.html og index.css), og etterhvert opprette dine egne når du starter på JavaScript-oppgavene. I src finner du også en mappe som heter images, hvor du finner bilder som kan brukes i Bekkstagram.
+I dette repoet finner du to mapper: [`src`](./src/) og [`løsningsforslag`](./løsningsforslag/). Mappen `src` kan du bruke som når du jobber med oppgavene, du kan endre filene som allerede finnes her ([`index.html`](./src/index.html) og [`index.css`](./src/index.css)), og etterhvert opprette dine egne når du starter på JavaScript-oppgavene. I `src` finner du også en mappe som heter [`img`](./src/img/), hvor du finner bilder som kan brukes i Bekkstagram.
 
 Web-applikasjonen din starter du ved å åpne index.html i en nettleser.
 
